@@ -22,7 +22,7 @@ var Peer = require('fabric-client/lib/Peer.js');
 var EventHub = require('fabric-client/lib/EventHub.js');
 var helper = require('./helper.js');
 var logger = helper.getLogger('instantiate-chaincode');
-var ORGS = hfc.getConfigSetting('network-config');
+var ORGS = hfc.getConfigSetting('network-config-aws');
 var tx_id = null;
 var eh = null;
 
