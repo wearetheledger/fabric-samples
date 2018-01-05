@@ -53,8 +53,8 @@ services:
       - 7053:7053
     volumes:
         - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/crypto/peer
-    depends_on:
-      - orderer.example.com
+    # depends_on:
+      # - orderer.example.com
 
   peer1.org1.example.com:
     container_name: peer1.org1.example.com
@@ -70,8 +70,8 @@ services:
       - 7058:7053
     volumes:
         - ./channel/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/:/etc/hyperledger/crypto/peer
-    depends_on:
-      - orderer.example.com
+    # depends_on:
+      # - orderer.example.com
 
   peer0.org2.example.com:
     container_name: peer0.org2.example.com
@@ -87,8 +87,8 @@ services:
       - 8053:7053
     volumes:
         - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/hyperledger/crypto/peer
-    depends_on:
-      - orderer.example.com
+    # depends_on:
+    #   - orderer.example.com
 
   peer1.org2.example.com:
     container_name: peer1.org2.example.com
@@ -104,5 +104,5 @@ services:
       - 8058:7053
     volumes:
         - ./channel/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/:/etc/hyperledger/crypto/peer
-    depends_on:
-      - orderer.example.com
+    # depends_on:
+    #   - orderer.example.com
