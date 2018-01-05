@@ -58,7 +58,7 @@ for (let key in ORGS) {
 			verify: false
 		}
 		// caClients[key] = new copService(caUrl, null /*defautl TLS opts*/, '' /* default CA */, cryptoSuite);
-		caClients[key] = new copService(caUrl, tlsOptions, '' /* default CA */, cryptoSuite);
+		caClients[key] = new copService(caUrl, tlsOptions, '', cryptoSuite);
 	}
 }
 
