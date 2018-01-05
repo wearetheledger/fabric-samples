@@ -53,7 +53,12 @@ for (let key in ORGS) {
 		setupPeers(channel, key, client);
 
 		let caUrl = ORGS[key].ca;
-		caClients[key] = new copService(caUrl, null /*defautl TLS opts*/, '' /* default CA */, cryptoSuite);
+		var tlsOptions = {
+			trustedRoots: [],
+			verify: false
+		}
+		// caClients[key] = new copService(caUrl, null /*defautl TLS opts*/, '' /* default CA */, cryptoSuite);
+		caClients[key] = new copService(caUrl, tlsOptions, '' /* default CA */, cryptoSuite);
 	}
 }
 
