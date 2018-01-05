@@ -22,7 +22,7 @@ var Peer = require('fabric-client/lib/Peer.js');
 var helper = require('./helper.js');
 var logger = helper.getLogger('invoke-chaincode');
 var EventHub = require('fabric-client/lib/EventHub.js');
-var ORGS = hfc.getConfigSetting('network-config-aws');
+var ORGS = hfc.getConfigSetting('network-config');
 
 var invokeChaincode = function(peerNames, channelName, chaincodeName, fcn, args, username, org) {
 	logger.debug(util.format('\n============ invoke transaction on organization %s ============\n', org));

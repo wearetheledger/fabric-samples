@@ -4,7 +4,8 @@
   "description": "A balance-transfer example node program to demonstrate using node.js SDK APIs",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "PORT=4000 node app.js",
+    "start-aws": "cross-env TARGET_NETWORK=aws PORT=4000 node app.js"
   },
   "keywords": [
     "fabric-client sample app",
@@ -20,6 +21,7 @@
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.3",
+    "cross-env": "^5.1.3",
     "express": "^4.15.2",
     "express-bearer-token": "^2.1.0",
     "express-jwt": "^5.1.0",

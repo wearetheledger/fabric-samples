@@ -27,7 +27,9 @@ var copService = require('fabric-ca-client');
 
 var hfc = require('fabric-client');
 hfc.setLogger(logger);
-var ORGS = hfc.getConfigSetting('network-config-aws');
+var ORGS = hfc.getConfigSetting('network-config');
+logger.info(ORGS)
+
 
 var clients = {};
 var channels = {};

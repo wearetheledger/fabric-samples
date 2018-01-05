@@ -2,7 +2,7 @@ var util = require('util');
 var path = require('path');
 var hfc = require('fabric-client');
 
-var file = 'network-config-aws%s.json';
+var file = 'network-config%s.json';
 
 var env = process.env.TARGET_NETWORK;
 if (env)
