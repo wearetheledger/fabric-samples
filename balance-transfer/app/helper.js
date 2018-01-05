@@ -57,8 +57,8 @@ for (let key in ORGS) {
 			trustedRoots: [],
 			verify: false
 		}
-		// caClients[key] = new copService(caUrl, null /*defautl TLS opts*/, '' /* default CA */, cryptoSuite);
-		caClients[key] = new copService(caUrl, tlsOptions, '', cryptoSuite);
+		caClients[key] = new copService(caUrl, null /*defautl TLS opts*/, '' /* default CA */, cryptoSuite);
+		// caClients[key] = new copService(caUrl, tlsOptions, '', cryptoSuite);
 	}
 }
 
