@@ -27,6 +27,9 @@ pull-binaries:
 docker-build:
 	docker build -t theledger/fabric-samples/balance-transfer .
 docker-run:
-	docker run -d --name=balance-transfer theledger/fabric-samples/balance-transfer
+	docker run -d --rm -p 4000:4000 --name=balance-transfer theledger/fabric-samples/balance-transfer
+docker-stop:
+	docker stop balance-transfer
+
 
 
