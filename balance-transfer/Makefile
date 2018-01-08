@@ -4,6 +4,8 @@ start:
 stop:
 	docker-compose -f artifacts/docker-compose.yaml down
 
+restart: stop start
+
 start-orderer:
 	docker-compose -f artifacts/orderer.yaml up -d
 
@@ -13,6 +15,16 @@ stop-orderer:
 restart-orderer: stop-orderer start-orderer
 
 crypto:
-	cd artifacts/channel && cryptogen generate --config=./cryptogen.yaml
+	cd artifacts/channel && ./../bin/cryptogen generate --config=./cryptogen.yaml
 
-restart: stop start
+txconfig:
+	cd artifacts/channel && ./../bin/configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./genesis.block
+	cd artifacts/channel && ./../bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./mychannel.tx -channelID mychannel
+	# TODO: create anchor peers config?
+
+pull-binaries:
+	cd artifacts && ./pull-binaries.sh 1.0.2
+docker-build:
+	docker build -t theledger/fabric-samples/balance-transfer .
+
+

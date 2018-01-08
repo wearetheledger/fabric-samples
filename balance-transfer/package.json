@@ -4,8 +4,14 @@
   "description": "A balance-transfer example node program to demonstrate using node.js SDK APIs",
   "main": "app.js",
   "scripts": {
-    "start": "PORT=4000 node app.js",
-    "start-aws": "cross-env TARGET_NETWORK=aws PORT=4000 node app.js"
+    "start": "PORT=4000 node src/app.js",
+    "start-aws": "cross-env TARGET_NETWORK=aws PORT=4000 node src/app.js",
+    "build": "yarn run clean && babel src -d dist --source-maps && npm run copy-creds && npm run copy-config",
+    "serve": "node dist/app.js",
+    "serve-aws": "cross-env TARGET_NETWORK=aws PORT=4000 node dist/app.js",
+    "copy-creds": "cp -R artifacts dist/artifacts",
+    "copy-config": "cp -R src/config.json dist/config.json && cp -R src/app/*.json dist/app/",
+    "clean": "rimraf ./dist"
   },
   "keywords": [
     "fabric-client sample app",
@@ -18,6 +24,8 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.3",
@@ -30,6 +38,7 @@
     "fabric-client": "^1.0.0",
     "fs-extra": "^2.0.0",
     "jsonwebtoken": "^7.3.0",
-    "log4js": "^0.6.38"
+    "log4js": "^0.6.38",
+    "rimraf": "^2.6.2"
   }
 }

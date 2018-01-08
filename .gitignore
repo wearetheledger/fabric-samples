@@ -26,4 +26,6 @@ balance-transfer/node_modules/*
 
 # ignore binaries
 balance-transfer/artifacts/bin
+balance-transfer/dist
+
 
