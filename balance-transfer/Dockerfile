@@ -33,7 +33,7 @@ COPY --from=build /tmp/dist ./dist
 # Default port is 4000
 VOLUME /var/log/chain-service
 EXPOSE 4000
-CMD [ "npm", "run", "serve" ]
+CMD [ "npm", "run", "serve-aws" ]
 
 
 
