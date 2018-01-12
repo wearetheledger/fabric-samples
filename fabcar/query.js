@@ -18,7 +18,7 @@ var fabric_client = new Fabric_Client();
 
 // setup the fabric network
 var channel = fabric_client.newChannel('mychannel');
-var peer = fabric_client.newPeer('grpc://localhost:7051');
+var peer = fabric_client.newPeer('grpc://ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:7051');
 channel.addPeer(peer);
 
 //

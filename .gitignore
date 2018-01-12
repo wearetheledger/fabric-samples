@@ -26,4 +26,7 @@ balance-transfer/node_modules/*
 balance-transfer/artifacts/bin
 balance-transfer/bin
 
+basic-network/bin
+fabcar/hfc-key-store
+
 .vscode/*

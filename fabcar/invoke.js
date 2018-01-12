@@ -18,9 +18,9 @@ var fabric_client = new Fabric_Client();
 
 // setup the fabric network
 var channel = fabric_client.newChannel('mychannel');
-var peer = fabric_client.newPeer('grpc://localhost:7051');
+var peer = fabric_client.newPeer('grpc://ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:7051');
 channel.addPeer(peer);
-var order = fabric_client.newOrderer('grpc://localhost:7050')
+var order = fabric_client.newOrderer('grpc://ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:7050')
 channel.addOrderer(order);
 
 //
@@ -61,8 +61,8 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 	var request = {
 		//targets: let default to the peer assigned to the client
 		chaincodeId: 'fabcar',
-		fcn: '',
-		args: [''],
+		fcn: 'changeCarOwner',
+		args: ['CAR0', 'Andries Van Humbeeck'],
 		chainId: 'mychannel',
 		txId: tx_id
 	};
@@ -103,7 +103,7 @@ Fabric_Client.newDefaultKeyValueStore({ path: store_path
 		// get an eventhub once the fabric client has a user assigned. The user
 		// is required bacause the event registration must be signed
 		let event_hub = fabric_client.newEventHub();
-		event_hub.setPeerAddr('grpc://localhost:7053');
+		event_hub.setPeerAddr('grpc://ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:7053');
 
 		// using resolve the promise so that result status may be processed
 		// under the then clause rather than having the catch clause process
