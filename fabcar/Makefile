@@ -6,7 +6,13 @@ generate:
 	cd ./../basic-network && ./bin/configtxgen -profile OneOrgOrdererGenesis -outputBlock ./config/genesis.block
 	cd ./../basic-network && ./bin/configtxgen -profile OneOrgChannel -outputCreateChannelTx ./config/channel.tx -channelID mychannel
 
-start:
+start-all:
 	./startOrderer.sh
 	sleep 5
+	./startFabric.sh
+
+start-orderer:
+	./startOrder.sh
+
+start-peers:
 	./startFabric.sh
