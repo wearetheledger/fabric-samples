@@ -67,7 +67,7 @@ Organizations:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: peer0.org1.example.com
+            - Host: ec2-52-49-39-97.eu-west-1.compute.amazonaws.com
               Port: 7051
 
 ################################################################################
@@ -85,7 +85,7 @@ Orderer: &OrdererDefaults
     OrdererType: solo
 
     Addresses:
-        - orderer.example.com:7050
+        - ec2-34-251-33-15.eu-west-1.compute.amazonaws.com:7050
 
     # Batch Timeout: The amount of time to wait before creating a batch
     BatchTimeout: 2s
