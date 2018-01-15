@@ -12,7 +12,7 @@ start-all:
 	./startFabric.sh
 
 start-orderer:
-	./startOrder.sh
+	./startOrderer.sh
 
 start-peers:
 	./startFabric.sh
