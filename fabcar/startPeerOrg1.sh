@@ -17,7 +17,7 @@ starttime=$(date +%s)
 
 # launch network; create channel and join peer to channel
 cd ../basic-network
-./start-peer.sh
+./start-peer-org1.sh
 
 # Create the channel
 docker exec -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/users/Admin@org1.example.com/msp" peer0.org1.example.com peer channel create -o ${HOST_ORDERER}:${PORT_ORDERER} -c mychannel -f /etc/hyperledger/configtx/channel.tx
