@@ -4,8 +4,8 @@ pull-binaries:
 
 generate:
 	#export FABRIC_CFG_PATH=/home/ec2-user/projects/fabric-samples/basic-network
-	FABRIC_CFG_PATH=/home/ec2-user/projects/fabric-samples/basic-network cd ./../basic-network && ./bin/configtxgen -profile OneOrgOrdererGenesis -outputBlock ./config/genesis.block
-	FABRIC_CFG_PATH=/home/ec2-user/projects/fabric-samples/basic-network cd ./../basic-network && ./bin/configtxgen -profile OneOrgChannel -outputCreateChannelTx ./config/channel.tx -channelID mychannel
+	cd ./../basic-network && ./bin/configtxgen -profile TwoOrgOrdererGenesis -outputBlock ./config/genesis.block
+	cd ./../basic-network && ./bin/configtxgen -profile TwoOrgChannel -outputCreateChannelTx ./config/channel.tx -channelID mychannel
 
 start-all:
 	./startOrderer.sh
