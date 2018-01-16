@@ -57,7 +57,7 @@ services:
       - CORE_PEER_TLS_ENABLED=false
       - CORE_PEER_LOCALMSPID=Org2MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer/
-      - CORE_PEER_ADDRESS=ec2-54-229-222-164.eu-west-1.compute.amazonaws.com 
+      - CORE_PEER_ADDRESS=ec2-54-229-222-164.eu-west-1.compute.amazonaws.com:7051
       # # the following setting starts chaincode containers on the same
       # # bridge network as the peers
       # # https://docs.docker.com/compose/networking/
