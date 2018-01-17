@@ -19,6 +19,7 @@ services:
         - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/genesis.block
         - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
         - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/msp/orderer/msp
+        - FABRIC_CA_SERVER_CA_NAME=ca.example.com
       working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderer
       command: orderer
       ports:
