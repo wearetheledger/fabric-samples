@@ -45,7 +45,7 @@ services:
       - CORE_PEER_LOCALMSPID=
       - CORE_PEER_MSPCONFIGPATH= #/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
       - CORE_CHAINCODE_KEEPALIVE=10
-    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    working_dir: /opt/gopath/src/github.com/hyperledger/
     command: /bin/bash
     volumes:
         - /var/run/:/host/var/run/
