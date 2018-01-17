@@ -10,11 +10,11 @@ set -x
 
 # don't rewrite paths for Windows Git Bash users
 export MSYS_NO_PATHCONV=1
-export HOST_ORDERER=ec2-34-251-33-15.eu-west-1.compute.amazonaws.com
+export HOST_ORDERER=orderer.example.com
 export PORT_ORDERER=7050
 
 # Create the channel
-docker exec -e "CORE_PEER_LOCALMSPID=OrdererMSP" -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/crypto/ordererOrganizations/example.com/msp" cli peer channel create -o ${HOST_ORDERER}:${PORT_ORDERER} -c mychannel -f /etc/hyperledger/configtx/channel.tx 
+docker exec -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" cli peer channel create -o ${HOST_ORDERER}:${PORT_ORDERER} -c mychannel -f /etc/hyperledger/configtx/channel.tx 
 # Join peer0.org1.example.com to the channel.
 docker exec -e "CORE_PEER_ID=peer0.org1.example.com" -e "CORE_PEER_ADDRESS=ec2-34-241-181-15.eu-west-1.compute.amazonaws.com" -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp/org1.example.com/peers/peer0.org1.example.com/msp" cli peer channel join -b mychannel.block
 
