@@ -12,10 +12,12 @@ set -x
 export MSYS_NO_PATHCONV=1
 export HOST_ORDERER=ec2-34-251-33-15.eu-west-1.compute.amazonaws.com
 export PORT_ORDERER=7050
+ORDERER_CA=/etc/hyperledger/msp/orderer/msp/tlscacerts/tlsca.example.com-cert.pem
+
 
 # Create the channel
-docker exec -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" cli peer channel create -o ${HOST_ORDERER}:${PORT_ORDERER} -c mychannel -f /etc/hyperledger/configtx/channel.tx 
+docker exec -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" cli peer channel create -o ${HOST_ORDERER}:${PORT_ORDERER} -c mychannel -f /etc/hyperledger/configtx/channel.tx --tls true --cafile $ORDERER_CA
 # Join peer0.org1.example.com to the channel.
-docker exec -e "CORE_PEER_ID=peer0.org1.example.com" -e "CORE_PEER_ADDRESS=ec2-34-241-181-15.eu-west-1.compute.amazonaws.com:7051" -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" cli peer channel join -b mychannel.block
+docker exec -e "CORE_PEER_ID=peer0.org1.example.com" -e "CORE_PEER_ADDRESS=ec2-34-241-181-15.eu-west-1.compute.amazonaws.com:7051" -e "CORE_PEER_LOCALMSPID=Org1MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" cli peer channel join -b mychannel.block --tls true --cafile $ORDERER_CA
 
-docker exec -e "CORE_PEER_ID=peer0.org2.example.com" -e "CORE_PEER_ADDRESS=ec2-54-229-222-164.eu-west-1.compute.amazonaws.com:7051" -e "CORE_PEER_LOCALMSPID=Org2MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp" cli peer channel join -b mychannel.block
+docker exec -e "CORE_PEER_ID=peer0.org2.example.com" -e "CORE_PEER_ADDRESS=ec2-54-229-222-164.eu-west-1.compute.amazonaws.com:7051" -e "CORE_PEER_LOCALMSPID=Org2MSP" -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp" cli peer channel join -b mychannel.block --tls true --cafile $ORDERER_CA
