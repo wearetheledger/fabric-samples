@@ -13,5 +13,5 @@ export MSYS_NO_PATHCONV=1
 
 docker-compose -f docker-compose-orderer.yml down
 
-docker-compose -f docker-compose-orderer.yml up -d orderer.example.com cli
+docker-compose -f docker-compose-orderer.yml up -d orderer.example.com
 
