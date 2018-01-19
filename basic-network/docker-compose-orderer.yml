@@ -19,6 +19,10 @@ services:
         - ORDERER_GENERAL_GENESISFILE=/etc/hyperledger/configtx/genesis.block
         - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
         - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/msp/orderer/msp
+        - ORDERER_GENERAL_TLS_ENABLED=true
+        - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/msp/orderer/tls/server.key
+        - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/msp/orderer/tls/server.crt
+        - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/msp/orderer/tls/ca.crt]
         - FABRIC_CA_SERVER_CA_NAME=ca.example.com
         - FABRIC_CA_SERVER_CA_ADDRESS=ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:7054
       working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderer
