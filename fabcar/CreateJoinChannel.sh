@@ -10,7 +10,7 @@ set -x
 
 # don't rewrite paths for Windows Git Bash users
 export MSYS_NO_PATHCONV=1
-export HOST_ORDERER=orderer.example.com
+export HOST_ORDERER=ec2-34-251-33-15.eu-west-1.compute.amazonaws.com
 export PORT_ORDERER=7050
 
 # Create the channel
