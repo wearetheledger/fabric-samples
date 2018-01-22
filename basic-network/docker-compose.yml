@@ -107,7 +107,7 @@ services:
     environment:
       - GOPATH=/opt/gopath
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_COMMITTER_LEDGER_ORDERER=orderer.example.com:7050
+      - CORE_PEER_COMMITTER_LEDGER_ORDERER=ec2-34-251-33-15.eu-west-1.compute.amazonaws.com:7050
       - CORE_LOGGING_LEVEL=DEBUG
       - CORE_PEER_TLS_ENABLED=true
       - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/server.crt
