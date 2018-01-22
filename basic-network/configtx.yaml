@@ -85,7 +85,7 @@ Organizations:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: ec2-52-49-39-97.eu-west-1.compute.amazonaws.com
+            - Host: ec2-34-241-181-15.eu-west-1.compute.amazonaws.com
               Port: 7051
 
     - &Org2
