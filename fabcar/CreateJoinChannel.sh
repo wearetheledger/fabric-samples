@@ -12,7 +12,7 @@ set -x
 export MSYS_NO_PATHCONV=1
 export HOST_ORDERER=ec2-34-251-33-15.eu-west-1.compute.amazonaws.com
 export PORT_ORDERER=7050
-ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+ORDERER_CA=/opt/gopath/src/github.com/hyperledger/fabric/crypto/ordererOrganizations/amazonaws.com/orderers/ec2-34-251-33-15.eu-west-1.compute.amazonaws.com/msp/tlscacerts/tlsca.amazonaws.com-cert.pem
 
 
 # Create the channel

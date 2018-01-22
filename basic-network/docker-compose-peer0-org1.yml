@@ -46,9 +46,9 @@ services:
       - 7053:7053
     volumes:
         - /var/run/:/host/var/run/
-        - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/msp/peer
-        - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com:/etc/hyperledger/peer
-        - ./crypto-config/peerOrganizations/org1.example.com/users:/etc/hyperledger/msp/users
+        - ./crypto-config/peerOrganizations/amazonaws.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/msp/peer
+        - ./crypto-config/peerOrganizations/amazonaws.com/peers/peer0.org1.example.com:/etc/hyperledger/peer
+        - ./crypto-config/peerOrganizations/amazonaws.com/users:/etc/hyperledger/msp/users
         - ./config:/etc/hyperledger/configtx
     depends_on:
       # - orderer.example.com
