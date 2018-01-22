@@ -44,7 +44,7 @@ PeerOrgs:
     # ---------------------------------------------------------------------------
     Specs:
       - Hostname: ec2-34-241-181-15.eu-west-1.compute # implicitly "foo.org1.example.com"
-        CommonName: peer0.org1.example.com # overrides Hostname-based FQDN set above
+        #CommonName: peer0.org1.example.com # overrides Hostname-based FQDN set above
     #   - Hostname: bar
     #   - Hostname: baz
     # ---------------------------------------------------------------------------
@@ -75,7 +75,7 @@ PeerOrgs:
     Domain: amazonaws.com
     Specs:
         - Hostname: ec2-54-229-222-164.eu-west-1.compute # implicitly "foo.org1.example.com"
-          CommonName: peer0.org2.example.com  
+          #CommonName: peer0.org2.example.com  
     Template:
       Count: 1
     Users:
