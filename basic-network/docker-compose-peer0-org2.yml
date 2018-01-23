@@ -72,7 +72,7 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
-      - FABRIC_CA_SERVER_CA_NAME=ca.example.com
+      - FABRIC_CA_SERVER_CA_NAME=ca.amazonaws.com
       - FABRIC_CA_SERVER_CA_ADDRESS=ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:7054
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: peer node start
@@ -82,8 +82,8 @@ services:
       - 7053:7053
     volumes:
         - /var/run/:/host/var/run/
-        - ./crypto-config/peerOrganizations/amazonaws.com/peers/peer0.org2.example.com/msp:/etc/hyperledger/msp/peer
-        - ./crypto-config/peerOrganizations/amazonaws.com/peers/peer0.org2.example.com:/etc/hyperledger/peer
+        - ./crypto-config/peerOrganizations/amazonaws.com/peers/ec2-54-229-222-164.eu-west-1.compute.amazonaws.com/msp:/etc/hyperledger/msp/peer
+        - ./crypto-config/peerOrganizations/amazonaws.com/peers/ec2-54-229-222-164.eu-west-1.compute.amazonaws.com:/etc/hyperledger/peer
         - ./crypto-config/peerOrganizations/amazonaws.com/users:/etc/hyperledger/msp/users
         - ./config:/etc/hyperledger/configtx
     depends_on:
