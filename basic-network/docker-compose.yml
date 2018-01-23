@@ -16,7 +16,7 @@ services:
       - FABRIC_CA_SERVER_TLS_ENABLED=true
       - FABRIC_CA_SERVER_CA_NAME=ca.amazonaws.com
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.amazonaws.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/144c4e03ef76dfaaf04709ad1bb0c0f0032e610a244e553d2802e94fcfa30d67_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/9aa1c0d7d9d192d97952e30ddd915219ba5694a8703b7ab388d86b7acebbc4ba_sk
     ports:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
@@ -110,9 +110,9 @@ services:
       - CORE_PEER_COMMITTER_LEDGER_ORDERER=ec2-34-251-33-15.eu-west-1.compute.amazonaws.com:7050
       - CORE_LOGGING_LEVEL=DEBUG
       - CORE_PEER_TLS_ENABLED=true
-      - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/amazonaws.com/peers/peer0.amazonaws.com/tls/server.crt
-      - CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/amazonaws.com/peers/peer0.amazonaws.com/tls/server.key
-      - CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/amazonaws.com/peers/peer0.amazonaws.com/tls/ca.crt
+      - CORE_PEER_TLS_CERT_FILE=
+      - CORE_PEER_TLS_KEY_FILE=
+      - CORE_PEER_TLS_ROOTCERT_FILE=
       - CORE_PEER_ID=
       - CORE_PEER_ADDRESS=
       - CORE_PEER_LOCALMSPID=
