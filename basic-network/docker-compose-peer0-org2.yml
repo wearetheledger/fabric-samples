@@ -36,8 +36,6 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
-      - FABRIC_CA_SERVER_CA_NAME=ca.amazonaws.com
-      - FABRIC_CA_SERVER_CA_ADDRESS=ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:7054
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: peer node start
     # command: peer node start --peer-chaincodedev=true
