@@ -9,12 +9,12 @@ networks:
   basic:
 
 services:
-  ca.example.com:
+  ca.amazonaws.com:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_CA_NAME=ca.example.com
+      - FABRIC_CA_SERVER_CA_NAME=ca.amazonaws.com
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.amazonaws.com-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/9aa1c0d7d9d192d97952e30ddd915219ba5694a8703b7ab388d86b7acebbc4ba_sk
     ports:
@@ -22,7 +22,7 @@ services:
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
       - ./crypto-config/peerOrganizations/amazonaws.com/ca/:/etc/hyperledger/fabric-ca-server-config
-    container_name: ca.example.com
+    container_name: ca.amazonaws.com
     networks:
       - basic
 
