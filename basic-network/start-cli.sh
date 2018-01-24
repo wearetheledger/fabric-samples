@@ -15,7 +15,7 @@ export PORT_ORDERER=7050
 
 # docker-compose -f docker-compose.yml down
 
-# docker-compose -f docker-compose.yml up -d ca.example.com orderer.example.com peer0.org1.example.com couchdb
+# docker-compose -f docker-compose.yml up -d ca.amazonaws.com orderer.example.com peer0.org1.example.com couchdb
 docker-compose -f docker-compose.yml up -d cli
 
 # wait for Hyperledger Fabric to start
