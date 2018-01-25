@@ -42,6 +42,7 @@ services:
     volumes:
         - /var/run/:/host/var/run/
         - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/msp/peer
+        - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/fabric/tls
         - ./crypto-config/peerOrganizations/org1.example.com/users:/etc/hyperledger/msp/users
         - ./config:/etc/hyperledger/configtx
     depends_on:
