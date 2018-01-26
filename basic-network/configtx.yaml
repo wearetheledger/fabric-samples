@@ -69,7 +69,7 @@ Organizations:
         ID: OrdererMSP
 
         # MSPDir is the filesystem path which contains the MSP configuration
-        MSPDir: crypto-config/ordererOrganizations/example.com/msp
+        MSPDir: crypto-config/ordererOrganizations/amazonaws.com/msp
 
     - &Org1
         # DefaultOrg defines the organization which is used in the sampleconfig
@@ -149,7 +149,8 @@ Orderer: &OrdererDefaults
     # Organizations is the list of orgs which are defined as participants on
     # the orderer side of the network
     Organizations:
-
+        - *Org1
+        - *Org2
 ################################################################################
 #
 #   SECTION: Application
