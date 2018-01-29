@@ -15,7 +15,7 @@ services:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.example.com
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.example.com-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/4239aa0dcd76daeeb8ba0cda701851d14504d31aad1b2ddddbac6a57365e497c_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/4a5be3fbbd953dce3be60ba87dae4a80429b9e9d7d9906b9c85366b73d23e8d7_sk
     ports:
       - "7054:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
@@ -37,6 +37,8 @@ services:
       - CORE_PEER_ID=
       - CORE_PEER_ADDRESS=
       - CORE_PEER_LOCALMSPID=
+      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=true
+      - CORE_PEER_TLS_ENABLED=true
       - CORE_PEER_MSPCONFIGPATH= #/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
       - CORE_CHAINCODE_KEEPALIVE=10
     working_dir: /opt/gopath/src/github.com/hyperledger/

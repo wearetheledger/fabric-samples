@@ -21,7 +21,9 @@ services:
         - ORDERER_GENERAL_TLS_ENABLED=true
         - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/msp/orderer/tls/server.key
         - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/msp/orderer/tls/server.crt
-        - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/hyperledger/msp/orderer/tls/ca.crt]
+        - ORDERER_GENERAL_TLS_ROOTCAS=/etc/hyperledger/msp/orderer/tls/ca.crt
+        - ORDERER_GENERAL_TLS_CLIENTAUTHREQUIRED=true
+        - ORDERER_GENERAL_TLS_CLIENTROOTCAS=/etc/hyperledger/msp/orderer/tls/ca.crt
         - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/msp/orderer/msp
       working_dir: /opt/gopath/src/github.com/hyperledger/fabric/orderer
       command: orderer
