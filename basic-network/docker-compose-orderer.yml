@@ -32,6 +32,6 @@ services:
       volumes:
           - ./config/:/etc/hyperledger/configtx
           - ./crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-34-251-33-15.eu-west-1.compute.amazonaws.com/:/etc/hyperledger/msp/orderer
-          - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/msp/peerOrg1
+          - ./crypto-config/peerOrganizations/amazonaws.com/peers/ec2-34-241-181-15.eu-west-1.compute.amazonaws.com/:/etc/hyperledger/msp/peerOrg1
       networks:
         - basic-orderer
