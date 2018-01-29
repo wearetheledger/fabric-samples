@@ -17,14 +17,19 @@ export CA_FILE=/opt/gopath/src/github.com/hyperledger/fabric/crypto/ordererOrgan
 
 # Create the channel
 docker exec \
-    -e "CORE_PEER_LOCALMSPID=Org1MSP" \
-    -e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" \
-    cli peer channel create \
-    -o ${HOST_ORDERER}:${PORT_ORDERER} \
-    -c mychannel \
-    -f /etc/hyperledger/configtx/channel.tx \
-    --tls true \
-    --cafile ${CA_FILE}
+-e "CORE_PEER_ID=peer0.org1.example.com" \
+-e "CORE_PEER_ADDRESS=ec2-34-241-181-15.eu-west-1.compute.amazonaws.com:7051" \
+-e "CORE_PEER_LOCALMSPID=Org1MSP" \
+-e "CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp" \
+-e "CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt" \
+-e "CORE_PEER_TLS_CLIENTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls/client.crt" \
+-e "CORE_PEER_TLS_CLIENTKEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls/client.key" \
+cli peer channel create \
+-o ${HOST_ORDERER}:${PORT_ORDERER} \
+-c mychannel \
+-f /etc/hyperledger/configtx/channel.tx \
+--tls true \
+--cafile ${CA_FILE}
 
 # Join peer0.org1.example.com to the channel.
 docker exec \
