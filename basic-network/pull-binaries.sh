@@ -35,7 +35,7 @@ dockerCaPull() {
 : ${FABRIC_TAG:="$MARCH-$VERSION"}
 
 #echo "===> Downloading platform binaries"
-#curl https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/${ARCH}-${VERSION}/hyperledger-fabric-${ARCH}-${VERSION}.tar.gz | tar xz
+curl https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/${ARCH}-${VERSION}/hyperledger-fabric-${ARCH}-${VERSION}.tar.gz | tar xz
 
  echo "===> Pulling fabric Images"
  dockerFabricPull ${FABRIC_TAG}
