@@ -34,14 +34,14 @@ dockerCaPull() {
 : ${CA_TAG:="$MARCH-$CA_VERSION"}
 : ${FABRIC_TAG:="$MARCH-$VERSION"}
 
-echo "===> Downloading platform binaries"
-curl https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/${ARCH}-${VERSION}/hyperledger-fabric-${ARCH}-${VERSION}.tar.gz | tar xz
+#echo "===> Downloading platform binaries"
+#curl https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/${ARCH}-${VERSION}/hyperledger-fabric-${ARCH}-${VERSION}.tar.gz | tar xz
 
-# echo "===> Pulling fabric Images"
-# dockerFabricPull ${FABRIC_TAG}
+ echo "===> Pulling fabric Images"
+ dockerFabricPull ${FABRIC_TAG}
 
-# echo "===> Pulling fabric ca Image"
-# dockerCaPull ${CA_TAG}
-# echo
-# echo "===> List out hyperledger docker images"
-# docker images | grep hyperledger*
+ echo "===> Pulling fabric ca Image"
+ dockerCaPull ${CA_TAG}
+ echo
+ echo "===> List out hyperledger docker images"
+ docker images | grep hyperledger*
