@@ -6,7 +6,7 @@
 version: '2'
 
 networks:
-  basic:
+  fabric-ca:
 
 services:
   rca-org0:
@@ -171,4 +171,3 @@ services:
       - /Users/jeroendeprest/go/src/github.com/hyperledger/fabric:/opt/gopath/src/github.com/hyperledger/fabric
     networks:
       - fabric-ca
-    depends_on:

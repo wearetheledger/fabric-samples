@@ -6,7 +6,7 @@
 version: '2'
 
 networks:
-  basic-orderer:
+  fabric-ca:
 
 services:
   orderer1-org0:
@@ -37,5 +37,4 @@ services:
       - ./data:/data
     networks:
       - fabric-ca
-    depends_on:
     

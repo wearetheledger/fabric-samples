@@ -6,7 +6,7 @@
 version: '2'
 
 networks:
-  basic-peer0:
+  fabric-ca:
 
 services:
   peer1-org1:
@@ -47,7 +47,6 @@ services:
       - /var/run:/host/var/run
     networks:
       - fabric-ca
-    depends_on:
 
   couchdb:
     container_name: couchdb
