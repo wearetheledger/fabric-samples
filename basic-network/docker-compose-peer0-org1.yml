@@ -9,52 +9,45 @@ networks:
   basic-peer0:
 
 services:
-
-  peer0.org1.example.com:
-    container_name: peer0.org1.example.com
-    image: hyperledger/fabric-peer
+  peer1-org1:
+    container_name: peer1-org1
+    image: hyperledger/fabric-ca-peer
     environment:
+      - FABRIC_CA_CLIENT_HOME=/opt/gopath/src/github.com/hyperledger/fabric/peer
+      - FABRIC_CA_CLIENT_TLS_CERTFILES=/data/org1-ca-chain.pem
+      - ENROLLMENT_URL=https://peer1-org1:peer1-org1pw@ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:11054
+      - PEER_HOME=/opt/gopath/src/github.com/hyperledger/fabric/peer
+      - PEER_HOST=peer1-org1
+      - PEER_NAME_PASS=peer1-org1:peer1-org1pw
+      - CORE_PEER_ID=peer1-org1
+      - CORE_PEER_ADDRESS=ec2-34-241-181-15.eu-west-1.compute.amazonaws.com:7051
+      - CORE_PEER_LOCALMSPID=org1MSP
+      - CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/msp
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer0.org1.example.com
-      - CORE_LOGGING_PEER=debug
-      - CORE_CHAINCODE_LOGGING_LEVEL=DEBUG
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=net_fabric-ca
+      - CORE_LOGGING_LEVEL=DEBUG
       - CORE_PEER_TLS_ENABLED=true
-      - CORE_PEER_TLS_CLIENTAUTHREQUIRED=true
-      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
-      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
-      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
-      - CORE_PEER_TLS_CLIENTROOTCAS_FILES=/etc/hyperledger/fabric/tls/ca.crt
-      - CORE_PEER_LOCALMSPID=Org1MSP
-      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer/
-      - CORE_PEER_ADDRESS=ec2-34-241-181-15.eu-west-1.compute.amazonaws.com:7051 # modified
-      # # the following setting starts chaincode containers on the same
-      # # bridge network as the peers
-      # # https://docs.docker.com/compose/networking/
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=${COMPOSE_PROJECT_NAME}_basic-peer0 #modified
-      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb:5984
-      # The CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME and CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD
-      # provide the credentials for ledger to connect to CouchDB.  The username and password must
-      # match the username and password set for the associated CouchDB.
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
-    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
-    command: peer node start
-    # command: peer node start --peer-chaincodedev=true
+      - CORE_PEER_PROFILE_ENABLED=true
+      - CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/data/org1-ca-chain.pem
+      - CORE_PEER_GOSSIP_USELEADERELECTION=true
+      - CORE_PEER_GOSSIP_ORGLEADER=false
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=ec2-34-241-181-15.eu-west-1.compute.amazonaws.com:7051
+      - CORE_PEER_GOSSIP_SKIPHANDSHAKE=true
+      - ORG=org1
+      - ORG_ADMIN_CERT=/data/orgs/org1/msp/admincerts/cert.pem
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+    command: /bin/bash -c '/scripts/start-peer.sh 2>&1 | tee /data/logs/peer1-org1.log'
     ports:
       - 7051:7051
-      - 7053:7053
     volumes:
-        - /var/run/:/host/var/run/
-        - ./crypto-config/peerOrganizations/amazonaws.com/peers/ec2-34-241-181-15.eu-west-1.compute.amazonaws.com/msp:/etc/hyperledger/msp/peer
-        - ./crypto-config/peerOrganizations/amazonaws.com/peers/ec2-34-241-181-15.eu-west-1.compute.amazonaws.com/tls:/etc/hyperledger/fabric/tls
-        - ./crypto-config/peerOrganizations/amazonaws.com/users:/etc/hyperledger/msp/users
-        - ./config:/etc/hyperledger/configtx
-    depends_on:
-      # - orderer.example.com
-      - couchdb
+      - ./scripts:/scripts
+      - ./data:/data
+      - /var/run:/host/var/run
     networks:
-      - basic-peer0
+      - fabric-ca
+    depends_on:
 
   couchdb:
     container_name: couchdb
@@ -67,7 +60,7 @@ services:
     ports:
       - 5984:5984
     networks:
-      - basic-peer0
+      - fabric-ca
     #depends_on:
     #  - orderer.example.com
     #  - peer0.org1.example.com
