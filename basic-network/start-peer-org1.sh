@@ -13,5 +13,5 @@ export MSYS_NO_PATHCONV=1
 
 docker-compose -f docker-compose-peer0-org1.yml down
 
-docker-compose -f docker-compose-peer0-org1.yml up -d peer0.org1.example.com couchdb
+docker-compose -f docker-compose-peer0-org1.yml up -d
 
