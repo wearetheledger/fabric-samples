@@ -10,7 +10,7 @@ set -e
 source $(dirname "$0")/env.sh
 
 # Wait for setup to complete sucessfully
-awaitSetup
+
 
 # Enroll to get orderer's TLS cert (using the "tls" profile)
 fabric-ca-client enroll -d --enrollment.profile tls -u $ENROLLMENT_URL -M /tmp/tls --csr.hosts $ORDERER_HOST

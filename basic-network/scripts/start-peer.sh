@@ -9,7 +9,6 @@ set -e
 
 source $(dirname "$0")/env.sh
 
-awaitSetup
 
 # Enroll the peer to get a TLS cert
 fabric-ca-client enroll -d --enrollment.profile tls -u $ENROLLMENT_URL -M /tmp/tls --csr.hosts $PEER_HOST
