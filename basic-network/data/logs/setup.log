@@ -1,0 +1,489 @@
+##### 2018-01-30 22:28:50 Beginning building channel artifacts ...
+##### 2018-01-30 22:28:50 Registering identities ...
+##### 2018-01-30 22:28:50 Enrolling with ica-org0 as bootstrap identity ...
+2018/01/30 22:28:50 [DEBUG] Home directory: /root/cas/ica-org0
+2018/01/30 22:28:50 [INFO] Created a default configuration file at /root/cas/ica-org0/fabric-ca-client-config.yaml
+2018/01/30 22:28:50 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org0-admin:ica-org0-adminpw@ica-org0:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420163280}
+2018/01/30 22:28:50 [DEBUG] Entered runEnroll
+2018/01/30 22:28:50 [DEBUG] Enrolling { Name:ica-org0-admin Secret:**** Profile: Label: CSR:&{ica-org0-admin [{US North Carolina  Hyperledger Fabric }] [a442c925c13d] <nil> <nil> } CAName: AttrReqs:[]  }
+2018/01/30 22:28:50 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org0:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:ica-org0-admin Secret:**** Profile: Label: CSR:&{ica-org0-admin [{US North Carolina  Hyperledger Fabric }] [a442c925c13d] <nil> <nil> } CAName: AttrReqs:[]  } CSR:{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420163280}
+2018/01/30 22:28:50 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420169ec0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:50 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc42020cf40 DummyKeystore:<nil>}
+2018/01/30 22:28:50 [INFO] TLS Enabled
+2018/01/30 22:28:50 [DEBUG] CA Files: [/data/org0-ca-chain.pem]
+2018/01/30 22:28:50 [DEBUG] Client Cert File: 
+2018/01/30 22:28:50 [DEBUG] Client Key File: 
+2018/01/30 22:28:50 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:50 [DEBUG] GenCSR &{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:}
+2018/01/30 22:28:50 [INFO] generating key: &{A:ecdsa S:256}
+2018/01/30 22:28:50 [DEBUG] generate key from request: algo=ecdsa, size=256
+2018/01/30 22:28:50 [INFO] encoded CSR
+2018/01/30 22:28:50 [DEBUG] Sending request
+POST https://ica-org0:7054/enroll
+{"hosts":["a442c925c13d"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBSzCB8gIBADBmMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xp\nbmExFDASBgNVBAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMxFzAVBgNV\nBAMTDmljYS1vcmcwLWFkbWluMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEPEeK\nJwwed3bdX8oceySX4GoMiiXsV+ITq4W0rqTinHY2qmb16joDjk50r2zGnx05uz/t\njtipDbNcWDXyGPUCTqAqMCgGCSqGSIb3DQEJDjEbMBkwFwYDVR0RBBAwDoIMYTQ0\nMmM5MjVjMTNkMAoGCCqGSM49BAMCA0gAMEUCIQD2cPkdPrw64x9DvEZ5qZfrH4PI\naedtzOyHd5wBDDN7ZQIgWcDfn/6r40/+n4SjfY6sIwqujkjpVDAbuZcpYzaO894=\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
+2018/01/30 22:28:50 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:50 [DEBUG] Response body result: map[Cert:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSekNDQWUyZ0F3SUJBZ0lVVUs4MEVYclQxallTYU9BWm5KTVd4cllQNHl3d0NnWUlLb1pJemowRUF3SXcKWmpFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1kyeHBaVzUwTVJjd0ZRWURWUVFERXc1eVkyRXRiM0puCk1DMWhaRzFwYmpBZUZ3MHhPREF4TXpBeU1qSTBNREJhRncweE9UQXhNekF5TWpJNU1EQmFNR1l4Q3pBSkJnTlYKQkFZVEFsVlRNUmN3RlFZRFZRUUlFdzVPYjNKMGFDQkRZWEp2YkdsdVlURVVNQklHQTFVRUNoTUxTSGx3WlhKcwpaV1JuWlhJeER6QU5CZ05WQkFzVEJtTnNhV1Z1ZERFWE1CVUdBMVVFQXhNT2FXTmhMVzl5WnpBdFlXUnRhVzR3CldUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFROFI0b25EQjUzZHQxZnloeDdKSmZnYWd5S0pleFgKNGhPcmhiU3VwT0tjZGphcVp2WHFPZ09PVG5TdmJNYWZIVG03UCsyTzJLa05zMXhZTmZJWTlRSk9vM2t3ZHpBTwpCZ05WSFE4QkFmOEVCQU1DQjRBd0RBWURWUjBUQVFIL0JBSXdBREFkQmdOVkhRNEVGZ1FVdVBTcHJXc0dsbXZsCk1QdzNjN2NyeE9aODUxOHdId1lEVlIwakJCZ3dGb0FVdC9obHhKU0V5UDlUTnk0cTRROHhzWjhhTWp3d0Z3WUQKVlIwUkJCQXdEb0lNWVRRME1tTTVNalZqTVROa01Bb0dDQ3FHU000OUJBTUNBMGdBTUVVQ0lRRGUrS05TYXMrQwpLalpQSytzbTdacFBMKzA2eUlvYytvUjdyZ2RhbDYvUlVRSWdDUno4NzBocTBqVy9QaDVJcWtlcjdwaDFrN3FkClgrNG01ZktPYWlGY3Mxaz0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo= ServerInfo:map[CAName:ica-org0 CAChain:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMVENDQWRTZ0F3SUJBZ0lVVHdyZjFwNDRqNHlGYXU1bUlqZ2EyVlptdExJd0NnWUlLb1pJemowRUF3SXcKWURFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1JtRmljbWxqTVJFd0R3WURWUVFERXdoeVkyRXRiM0puCk1EQWVGdzB4T0RBeE16QXlNakl4TURCYUZ3MHlNekF4TWpreU1qSTJNREJhTUdZeEN6QUpCZ05WQkFZVEFsVlQKTVJjd0ZRWURWUVFJRXc1T2IzSjBhQ0JEWVhKdmJHbHVZVEVVTUJJR0ExVUVDaE1MU0hsd1pYSnNaV1JuWlhJeApEekFOQmdOVkJBc1RCbU5zYVdWdWRERVhNQlVHQTFVRUF4TU9jbU5oTFc5eVp6QXRZV1J0YVc0d1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBU2tFRm5KcUEyNDNVQUpOMXZpdmJ3TVJQTDFtUDBra0ZHQUhJNzIKY0VMWXJTR0ZPaGhXYXh4WGpyWWFSUE1zWUdkRGszRWlCNGFiV29zK1hCZG10Q1Z4bzJZd1pEQU9CZ05WSFE4QgpBZjhFQkFNQ0FRWXdFZ1lEVlIwVEFRSC9CQWd3QmdFQi93SUJBREFkQmdOVkhRNEVGZ1FVdC9obHhKU0V5UDlUCk55NHE0UTh4c1o4YU1qd3dId1lEVlIwakJCZ3dGb0FVanc1ZFdjQnoweVFGRU1aMnh5aWFpaWpCeVIwd0NnWUkKS29aSXpqMEVBd0lEUndBd1JBSWdNRW9qQzI3YXphY3NHYWkwNnZRbTgvSlFNMjBxSlhmNUJMZHZRcGIxNW0wQwpJSEhHRXUvWFFhQ2xRekhwdzNxSzNSakRoSnRjVk0xVW5CT3prSUp4U2o4ZgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlDQmpDQ0FhMmdBd0lCQWdJVWJjYnBwOFF4VTNtWXQ5TmlUWnB1M0RNbEpQRXdDZ1lJS29aSXpqMEVBd0l3CllERUxNQWtHQTFVRUJoTUNWVk14RnpBVkJnTlZCQWdURGs1dmNuUm9JRU5oY205c2FXNWhNUlF3RWdZRFZRUUsKRXd0SWVYQmxjbXhsWkdkbGNqRVBNQTBHQTFVRUN4TUdSbUZpY21sak1SRXdEd1lEVlFRREV3aHlZMkV0YjNKbgpNREFlRncweE9EQXhNekF5TWpJeE1EQmFGdzB6TXpBeE1qWXlNakl4TURCYU1HQXhDekFKQmdOVkJBWVRBbFZUCk1SY3dGUVlEVlFRSUV3NU9iM0owYUNCRFlYSnZiR2x1WVRFVU1CSUdBMVVFQ2hNTFNIbHdaWEpzWldSblpYSXgKRHpBTkJnTlZCQXNUQmtaaFluSnBZekVSTUE4R0ExVUVBeE1JY21OaExXOXlaekF3V1RBVEJnY3Foa2pPUFFJQgpCZ2dxaGtqT1BRTUJCd05DQUFTTVVWSzl3VngvSENqRzZyOGFWT0F3S09PeWtidjBYMGp2RzJVSWNibEd0OEhKCnNXbllNVVBGUFovaFZvVCs5ODZ6bDV2OUpkYVg4MytoMjQxSWJINVFvMFV3UXpBT0JnTlZIUThCQWY4RUJBTUMKQVFZd0VnWURWUjBUQVFIL0JBZ3dCZ0VCL3dJQkFUQWRCZ05WSFE0RUZnUVVqdzVkV2NCejB5UUZFTVoyeHlpYQppaWpCeVIwd0NnWUlLb1pJemowRUF3SURSd0F3UkFJZ1JoT0Vaa29iUS9KSGlDSnNDOXNmK3JjS2t2N0J2WWN2Clo2T0Y1Vit2MTNzQ0lBL0NORjBBMEVtZkc0emh4bTNqSU5uMUJBeEk0ZFBGU204Y1ZiSVVBY2dwCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K Version:]]
+2018/01/30 22:28:50 [DEBUG] newEnrollmentResponse ica-org0-admin
+2018/01/30 22:28:50 [INFO] Stored client certificate at /root/cas/ica-org0/msp/signcerts/cert.pem
+2018/01/30 22:28:50 [INFO] Stored root CA certificate at /root/cas/ica-org0/msp/cacerts/ica-org0-7054.pem
+2018/01/30 22:28:50 [INFO] Stored intermediate CA certificates at /root/cas/ica-org0/msp/intermediatecerts/ica-org0-7054.pem
+##### 2018-01-30 22:28:50 Registering orderer1-org0 with ica-org0
+2018/01/30 22:28:50 [DEBUG] Home directory: /root/cas/ica-org0
+2018/01/30 22:28:50 [INFO] Configuration file location: /root/cas/ica-org0/fabric-ca-client-config.yaml
+2018/01/30 22:28:50 [DEBUG] Checking for enrollment
+2018/01/30 22:28:50 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org0:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:orderer1-org0 Type:client Secret:orderer1-org0pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016f140}
+2018/01/30 22:28:50 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42016dce0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:50 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420204400 DummyKeystore:<nil>}
+2018/01/30 22:28:50 [INFO] TLS Enabled
+2018/01/30 22:28:50 [DEBUG] CA Files: [/data/org0-ca-chain.pem]
+2018/01/30 22:28:50 [DEBUG] Client Cert File: 
+2018/01/30 22:28:50 [DEBUG] Client Key File: 
+2018/01/30 22:28:50 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:50 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org0:7054 MSPDir:/root/cas/ica-org0/msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:orderer1-org0 Type:client Secret:orderer1-org0pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016f140}
+2018/01/30 22:28:50 [DEBUG] Entered runRegister
+2018/01/30 22:28:50 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org0:7054 MSPDir:/root/cas/ica-org0/msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:orderer1-org0 Type:client Secret:orderer1-org0pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016f140}
+2018/01/30 22:28:50 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42016dce0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:50 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420204400 DummyKeystore:<nil>}
+2018/01/30 22:28:50 [INFO] TLS Enabled
+2018/01/30 22:28:50 [DEBUG] CA Files: [/data/org0-ca-chain.pem]
+2018/01/30 22:28:50 [DEBUG] Client Cert File: 
+2018/01/30 22:28:50 [DEBUG] Client Key File: 
+2018/01/30 22:28:50 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:50 [DEBUG] Loading identity: keyFile=/root/cas/ica-org0/msp/keystore/key.pem, certFile=/root/cas/ica-org0/msp/signcerts/cert.pem
+2018/01/30 22:28:50 [DEBUG] Register { Name:orderer1-org0 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:  }
+2018/01/30 22:28:50 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:50 [DEBUG] Sending request
+POST https://ica-org0:7054/register
+{"id":"orderer1-org0","type":"client","secret":"orderer1-org0pw","max_enrollments":-1,"affiliation":"org1"}
+2018/01/30 22:28:51 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:51 [DEBUG] Response body result: map[secret:orderer1-org0pw]
+2018/01/30 22:28:51 [DEBUG] The register request completed successfully
+Password: orderer1-org0pw
+##### 2018-01-30 22:28:51 Registering admin identity with ica-org0
+2018/01/30 22:28:51 [DEBUG] Home directory: /root/cas/ica-org0
+2018/01/30 22:28:51 [INFO] Configuration file location: /root/cas/ica-org0/fabric-ca-client-config.yaml
+2018/01/30 22:28:51 [DEBUG] Checking for enrollment
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org0:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org0 Type:client Secret:admin-org0pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:admin Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016b720}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420163e30 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201fef50 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org0-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org0:7054 MSPDir:/root/cas/ica-org0/msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org0 Type:client Secret:admin-org0pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:admin Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016b720}
+2018/01/30 22:28:51 [DEBUG] Entered runRegister
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org0:7054 MSPDir:/root/cas/ica-org0/msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org0-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org0 Type:client Secret:admin-org0pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:admin Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016b720}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420163e30 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201fef50 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org0-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Loading identity: keyFile=/root/cas/ica-org0/msp/keystore/key.pem, certFile=/root/cas/ica-org0/msp/signcerts/cert.pem
+2018/01/30 22:28:51 [DEBUG] Register { Name:admin-org0 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[{admin true true}] CAName:  }
+2018/01/30 22:28:51 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:51 [DEBUG] Sending request
+POST https://ica-org0:7054/register
+{"id":"admin-org0","type":"client","secret":"admin-org0pw","max_enrollments":-1,"affiliation":"org1","attrs":[{"name":"admin","value":"true","ecert":true}]}
+2018/01/30 22:28:51 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:51 [DEBUG] Response body result: map[secret:admin-org0pw]
+2018/01/30 22:28:51 [DEBUG] The register request completed successfully
+Password: admin-org0pw
+##### 2018-01-30 22:28:51 Enrolling with ica-org1 as bootstrap identity ...
+2018/01/30 22:28:51 [DEBUG] Home directory: /root/cas/ica-org1
+2018/01/30 22:28:51 [INFO] Created a default configuration file at /root/cas/ica-org1/fabric-ca-client-config.yaml
+2018/01/30 22:28:51 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org1-admin:ica-org1-adminpw@ica-org1:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016d420}
+2018/01/30 22:28:51 [DEBUG] Entered runEnroll
+2018/01/30 22:28:51 [DEBUG] Enrolling { Name:ica-org1-admin Secret:**** Profile: Label: CSR:&{ica-org1-admin [{US North Carolina  Hyperledger Fabric }] [a442c925c13d] <nil> <nil> } CAName: AttrReqs:[]  }
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:ica-org1-admin Secret:**** Profile: Label: CSR:&{ica-org1-admin [{US North Carolina  Hyperledger Fabric }] [a442c925c13d] <nil> <nil> } CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016d420}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420210000 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc42020b250 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] GenCSR &{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:}
+2018/01/30 22:28:51 [INFO] generating key: &{A:ecdsa S:256}
+2018/01/30 22:28:51 [DEBUG] generate key from request: algo=ecdsa, size=256
+2018/01/30 22:28:51 [INFO] encoded CSR
+2018/01/30 22:28:51 [DEBUG] Sending request
+POST https://ica-org1:7054/enroll
+{"hosts":["a442c925c13d"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBSjCB8gIBADBmMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xp\nbmExFDASBgNVBAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMxFzAVBgNV\nBAMTDmljYS1vcmcxLWFkbWluMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZGZ1\nVhij59oFg4UKH/MeN/JtSFgZ3RR8jQJ1XcxfAeB3B2ruG/+rqChlfnukgXXDsm3P\nz2VQJD/rkOXa7lCD4aAqMCgGCSqGSIb3DQEJDjEbMBkwFwYDVR0RBBAwDoIMYTQ0\nMmM5MjVjMTNkMAoGCCqGSM49BAMCA0cAMEQCIGvM6o7rOoEly0S5Yy2hJIj8TKrf\n6zKUAYt3mFN3+nu0AiAWsXogwc/t0P4rcusEnaW/G+ez/IJeZGyas2F44kkP/g==\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
+2018/01/30 22:28:51 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:51 [DEBUG] Response body result: map[Cert:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSakNDQWUyZ0F3SUJBZ0lVS28zeVQ1TkE5ejZZZ0VtUitJck5CN1ZncHdFd0NnWUlLb1pJemowRUF3SXcKWmpFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1kyeHBaVzUwTVJjd0ZRWURWUVFERXc1eVkyRXRiM0puCk1TMWhaRzFwYmpBZUZ3MHhPREF4TXpBeU1qSTBNREJhRncweE9UQXhNekF5TWpJNU1EQmFNR1l4Q3pBSkJnTlYKQkFZVEFsVlRNUmN3RlFZRFZRUUlFdzVPYjNKMGFDQkRZWEp2YkdsdVlURVVNQklHQTFVRUNoTUxTSGx3WlhKcwpaV1JuWlhJeER6QU5CZ05WQkFzVEJtTnNhV1Z1ZERFWE1CVUdBMVVFQXhNT2FXTmhMVzl5WnpFdFlXUnRhVzR3CldUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFSa1puVldHS1BuMmdXRGhRb2Y4eDQzOG0xSVdCbmQKRkh5TkFuVmR6RjhCNEhjSGF1NGIvNnVvS0dWK2U2U0JkY095YmMvUFpWQWtQK3VRNWRydVVJUGhvM2t3ZHpBTwpCZ05WSFE4QkFmOEVCQU1DQjRBd0RBWURWUjBUQVFIL0JBSXdBREFkQmdOVkhRNEVGZ1FVdm5RV3pkQlhiM3htCkltNkdkZlpoWWJaVGg2RXdId1lEVlIwakJCZ3dGb0FVUTN5YW8vUHZ1aUdqaE1HdHd4NFloOGJMMGJRd0Z3WUQKVlIwUkJCQXdEb0lNWVRRME1tTTVNalZqTVROa01Bb0dDQ3FHU000OUJBTUNBMGNBTUVRQ0lHZXI3YVNKWlFBNQpNVlNFVEZDTEFCQVUzRzByeTljYk5qam5vYWxKd01VUkFpQWlXOUxpR3pCK1lURGxjeitZbHFzakVjWXBQS2VZCmtRUFhIZEhjcFhTYlpnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo= ServerInfo:map[CAName:ica-org1 CAChain:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMVENDQWRTZ0F3SUJBZ0lVVldGcVI3cGNCYnd2Nm9aTXE2S2lHOTdMMVlvd0NnWUlLb1pJemowRUF3SXcKWURFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1JtRmljbWxqTVJFd0R3WURWUVFERXdoeVkyRXRiM0puCk1UQWVGdzB4T0RBeE16QXlNakl4TURCYUZ3MHlNekF4TWpreU1qSTJNREJhTUdZeEN6QUpCZ05WQkFZVEFsVlQKTVJjd0ZRWURWUVFJRXc1T2IzSjBhQ0JEWVhKdmJHbHVZVEVVTUJJR0ExVUVDaE1MU0hsd1pYSnNaV1JuWlhJeApEekFOQmdOVkJBc1RCbU5zYVdWdWRERVhNQlVHQTFVRUF4TU9jbU5oTFc5eVp6RXRZV1J0YVc0d1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBUUZ2Z21YdFcrUEVnYzZ6WisxcnlobUVTZktodGRsSjJ1RHN4dUcKYVU4MDBvMVFNdkQ3Y2ZUNkE4bFVEQ3hQeGYxc2hBbS81UkEyczA5ZkxtMlZFR2d1bzJZd1pEQU9CZ05WSFE4QgpBZjhFQkFNQ0FRWXdFZ1lEVlIwVEFRSC9CQWd3QmdFQi93SUJBREFkQmdOVkhRNEVGZ1FVUTN5YW8vUHZ1aUdqCmhNR3R3eDRZaDhiTDBiUXdId1lEVlIwakJCZ3dGb0FVMEN3WlJyYytndmlkYWdERUJqOWF2bThESU9jd0NnWUkKS29aSXpqMEVBd0lEUndBd1JBSWdSOTNpclZzaG81MDJsdGwraVZ6VUpTWHJoNWlZalljRXBTa2dxWXZJSnhFQwpJQS9WSmdsYmY1UFR0SytlUCtRY3hvWU9LZmxwVDJMdFdmQnpOUXh5cnIzRgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlDQmpDQ0FhMmdBd0lCQWdJVVkrTWRlb1I3bXU4UlF3U3FSc2xacGxnNXpmTXdDZ1lJS29aSXpqMEVBd0l3CllERUxNQWtHQTFVRUJoTUNWVk14RnpBVkJnTlZCQWdURGs1dmNuUm9JRU5oY205c2FXNWhNUlF3RWdZRFZRUUsKRXd0SWVYQmxjbXhsWkdkbGNqRVBNQTBHQTFVRUN4TUdSbUZpY21sak1SRXdEd1lEVlFRREV3aHlZMkV0YjNKbgpNVEFlRncweE9EQXhNekF5TWpJeE1EQmFGdzB6TXpBeE1qWXlNakl4TURCYU1HQXhDekFKQmdOVkJBWVRBbFZUCk1SY3dGUVlEVlFRSUV3NU9iM0owYUNCRFlYSnZiR2x1WVRFVU1CSUdBMVVFQ2hNTFNIbHdaWEpzWldSblpYSXgKRHpBTkJnTlZCQXNUQmtaaFluSnBZekVSTUE4R0ExVUVBeE1JY21OaExXOXlaekV3V1RBVEJnY3Foa2pPUFFJQgpCZ2dxaGtqT1BRTUJCd05DQUFRYkxLZ1lVdi83TjZkVk1tN05jeEh5cWZUUjdmYWF6b3B1SDlGZDdrMUtaY3BSCkpLZmJvZ2lXUnNxQkxaZmNBTXU1dFMwcjRqMHIvRTJjWk5HbVZ3d2hvMFV3UXpBT0JnTlZIUThCQWY4RUJBTUMKQVFZd0VnWURWUjBUQVFIL0JBZ3dCZ0VCL3dJQkFUQWRCZ05WSFE0RUZnUVUwQ3daUnJjK2d2aWRhZ0RFQmo5YQp2bThESU9jd0NnWUlLb1pJemowRUF3SURSd0F3UkFJZ2RvdkNtVzJNVmFzY0YwZzcxTk9aK2lpblhQTlJTZGRVCmZaRW1sUGlKOWhJQ0lHWU5jWjJka1pIYzF0R21oN1dZZXg1Um03djI4NUF4RWRKYjkva1hCWEMzCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K Version:]]
+2018/01/30 22:28:51 [DEBUG] newEnrollmentResponse ica-org1-admin
+2018/01/30 22:28:51 [INFO] Stored client certificate at /root/cas/ica-org1/msp/signcerts/cert.pem
+2018/01/30 22:28:51 [INFO] Stored root CA certificate at /root/cas/ica-org1/msp/cacerts/ica-org1-7054.pem
+2018/01/30 22:28:51 [INFO] Stored intermediate CA certificates at /root/cas/ica-org1/msp/intermediatecerts/ica-org1-7054.pem
+##### 2018-01-30 22:28:51 Registering peer1-org1 with ica-org1
+2018/01/30 22:28:51 [DEBUG] Home directory: /root/cas/ica-org1
+2018/01/30 22:28:51 [INFO] Configuration file location: /root/cas/ica-org1/fabric-ca-client-config.yaml
+2018/01/30 22:28:51 [DEBUG] Checking for enrollment
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer1-org1 Type:client Secret:peer1-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42018f160}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42019ec00 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201b89e0 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org1:7054 MSPDir:/root/cas/ica-org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer1-org1 Type:client Secret:peer1-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42018f160}
+2018/01/30 22:28:51 [DEBUG] Entered runRegister
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:/root/cas/ica-org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer1-org1 Type:client Secret:peer1-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42018f160}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42019ec00 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201b89e0 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Loading identity: keyFile=/root/cas/ica-org1/msp/keystore/key.pem, certFile=/root/cas/ica-org1/msp/signcerts/cert.pem
+2018/01/30 22:28:51 [DEBUG] Register { Name:peer1-org1 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:  }
+2018/01/30 22:28:51 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:51 [DEBUG] Sending request
+POST https://ica-org1:7054/register
+{"id":"peer1-org1","type":"client","secret":"peer1-org1pw","max_enrollments":-1,"affiliation":"org1"}
+2018/01/30 22:28:51 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:51 [DEBUG] Response body result: map[secret:peer1-org1pw]
+2018/01/30 22:28:51 [DEBUG] The register request completed successfully
+Password: peer1-org1pw
+##### 2018-01-30 22:28:51 Registering peer2-org1 with ica-org1
+2018/01/30 22:28:51 [DEBUG] Home directory: /root/cas/ica-org1
+2018/01/30 22:28:51 [INFO] Configuration file location: /root/cas/ica-org1/fabric-ca-client-config.yaml
+2018/01/30 22:28:51 [DEBUG] Checking for enrollment
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer2-org1 Type:client Secret:peer2-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420163700}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420169da0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201fcf10 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org1:7054 MSPDir:/root/cas/ica-org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer2-org1 Type:client Secret:peer2-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420163700}
+2018/01/30 22:28:51 [DEBUG] Entered runRegister
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:/root/cas/ica-org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer2-org1 Type:client Secret:peer2-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420163700}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420169da0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201fcf10 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Loading identity: keyFile=/root/cas/ica-org1/msp/keystore/key.pem, certFile=/root/cas/ica-org1/msp/signcerts/cert.pem
+2018/01/30 22:28:51 [DEBUG] Register { Name:peer2-org1 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:  }
+2018/01/30 22:28:51 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:51 [DEBUG] Sending request
+POST https://ica-org1:7054/register
+{"id":"peer2-org1","type":"client","secret":"peer2-org1pw","max_enrollments":-1,"affiliation":"org1"}
+2018/01/30 22:28:51 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:51 [DEBUG] Response body result: map[secret:peer2-org1pw]
+2018/01/30 22:28:51 [DEBUG] The register request completed successfully
+Password: peer2-org1pw
+##### 2018-01-30 22:28:51 Registering admin identity with ica-org1
+2018/01/30 22:28:51 [DEBUG] Home directory: /root/cas/ica-org1
+2018/01/30 22:28:51 [INFO] Configuration file location: /root/cas/ica-org1/fabric-ca-client-config.yaml
+2018/01/30 22:28:51 [DEBUG] Checking for enrollment
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org1 Type:client Secret:admin-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:hf.Registrar.Roles Value:client ECert:false} {Name:hf.Registrar.Attributes Value:* ECert:false} {Name:hf.Revoker Value:true ECert:false} {Name:hf.GenCRL Value:true ECert:false} {Name:admin Value:true ECert:true} {Name:abac.init Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420177660}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42020c000 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420206dc0 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org1:7054 MSPDir:/root/cas/ica-org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org1 Type:client Secret:admin-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:hf.Registrar.Roles Value:client ECert:false} {Name:hf.Registrar.Attributes Value:* ECert:false} {Name:hf.Revoker Value:true ECert:false} {Name:hf.GenCRL Value:true ECert:false} {Name:admin Value:true ECert:true} {Name:abac.init Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420177660}
+2018/01/30 22:28:51 [DEBUG] Entered runRegister
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:/root/cas/ica-org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org1 Type:client Secret:admin-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:hf.Registrar.Roles Value:client ECert:false} {Name:hf.Registrar.Attributes Value:* ECert:false} {Name:hf.Revoker Value:true ECert:false} {Name:hf.GenCRL Value:true ECert:false} {Name:admin Value:true ECert:true} {Name:abac.init Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420177660}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42020c000 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420206dc0 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Loading identity: keyFile=/root/cas/ica-org1/msp/keystore/key.pem, certFile=/root/cas/ica-org1/msp/signcerts/cert.pem
+2018/01/30 22:28:51 [DEBUG] Register { Name:admin-org1 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[{hf.Registrar.Roles client false} {hf.Registrar.Attributes * false} {hf.Revoker true false} {hf.GenCRL true false} {admin true true} {abac.init true true}] CAName:  }
+2018/01/30 22:28:51 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:51 [DEBUG] Sending request
+POST https://ica-org1:7054/register
+{"id":"admin-org1","type":"client","secret":"admin-org1pw","max_enrollments":-1,"affiliation":"org1","attrs":[{"name":"hf.Registrar.Roles","value":"client"},{"name":"hf.Registrar.Attributes","value":"*"},{"name":"hf.Revoker","value":"true"},{"name":"hf.GenCRL","value":"true"},{"name":"admin","value":"true","ecert":true},{"name":"abac.init","value":"true","ecert":true}]}
+2018/01/30 22:28:51 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:51 [DEBUG] Response body result: map[secret:admin-org1pw]
+2018/01/30 22:28:51 [DEBUG] The register request completed successfully
+Password: admin-org1pw
+##### 2018-01-30 22:28:51 Registering user identity with ica-org1
+2018/01/30 22:28:51 [DEBUG] Home directory: /root/cas/ica-org1
+2018/01/30 22:28:51 [INFO] Configuration file location: /root/cas/ica-org1/fabric-ca-client-config.yaml
+2018/01/30 22:28:51 [DEBUG] Checking for enrollment
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:user-org1 Type:client Secret:user-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420193140}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42019ec00 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201b8a40 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org1:7054 MSPDir:/root/cas/ica-org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:user-org1 Type:client Secret:user-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420193140}
+2018/01/30 22:28:51 [DEBUG] Entered runRegister
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:/root/cas/ica-org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org1-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:user-org1 Type:client Secret:user-org1pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420193140}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42019ec00 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201b8a40 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Loading identity: keyFile=/root/cas/ica-org1/msp/keystore/key.pem, certFile=/root/cas/ica-org1/msp/signcerts/cert.pem
+2018/01/30 22:28:51 [DEBUG] Register { Name:user-org1 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:  }
+2018/01/30 22:28:51 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:51 [DEBUG] Sending request
+POST https://ica-org1:7054/register
+{"id":"user-org1","type":"client","secret":"user-org1pw","max_enrollments":-1,"affiliation":"org1"}
+2018/01/30 22:28:51 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:51 [DEBUG] Response body result: map[secret:user-org1pw]
+2018/01/30 22:28:51 [DEBUG] The register request completed successfully
+Password: user-org1pw
+##### 2018-01-30 22:28:51 Enrolling with ica-org2 as bootstrap identity ...
+2018/01/30 22:28:51 [DEBUG] Home directory: /root/cas/ica-org2
+2018/01/30 22:28:51 [INFO] Created a default configuration file at /root/cas/ica-org2/fabric-ca-client-config.yaml
+2018/01/30 22:28:51 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org2-admin:ica-org2-adminpw@ica-org2:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201775a0}
+2018/01/30 22:28:51 [DEBUG] Entered runEnroll
+2018/01/30 22:28:51 [DEBUG] Enrolling { Name:ica-org2-admin Secret:**** Profile: Label: CSR:&{ica-org2-admin [{US North Carolina  Hyperledger Fabric }] [a442c925c13d] <nil> <nil> } CAName: AttrReqs:[]  }
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name:ica-org2-admin Secret:**** Profile: Label: CSR:&{ica-org2-admin [{US North Carolina  Hyperledger Fabric }] [a442c925c13d] <nil> <nil> } CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201775a0}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4202180c0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420213640 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] GenCSR &{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:}
+2018/01/30 22:28:51 [INFO] generating key: &{A:ecdsa S:256}
+2018/01/30 22:28:51 [DEBUG] generate key from request: algo=ecdsa, size=256
+2018/01/30 22:28:51 [INFO] encoded CSR
+2018/01/30 22:28:51 [DEBUG] Sending request
+POST https://ica-org2:7054/enroll
+{"hosts":["a442c925c13d"],"certificate_request":"-----BEGIN CERTIFICATE REQUEST-----\nMIIBSjCB8gIBADBmMQswCQYDVQQGEwJVUzEXMBUGA1UECBMOTm9ydGggQ2Fyb2xp\nbmExFDASBgNVBAoTC0h5cGVybGVkZ2VyMQ8wDQYDVQQLEwZGYWJyaWMxFzAVBgNV\nBAMTDmljYS1vcmcyLWFkbWluMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAET+0D\nFMxk6S6cEmsx7bgyoe52NoX7vz6dfglcWQoSJWddJVTwLKitPXTOepoW0Vbdh9hW\nFys+SH/0XG7wqtJAp6AqMCgGCSqGSIb3DQEJDjEbMBkwFwYDVR0RBBAwDoIMYTQ0\nMmM5MjVjMTNkMAoGCCqGSM49BAMCA0cAMEQCIFkvUCnUYqoe0K04Z7XmFQcmMUpl\nkTPQd/Y3dHCr3T5mAiAlbKy6ngj5ZFpx3UUuHJvTuYWQP4Nd35rgqB7O1ZRmrg==\n-----END CERTIFICATE REQUEST-----\n","profile":"","crl_override":"","label":"","NotBefore":"0001-01-01T00:00:00Z","NotAfter":"0001-01-01T00:00:00Z","CAName":""}
+2018/01/30 22:28:51 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:51 [DEBUG] Response body result: map[Cert:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNSekNDQWUyZ0F3SUJBZ0lVVUxIOWxlSWkwZlJEWVZtaE1tRWZPQjBhQUNVd0NnWUlLb1pJemowRUF3SXcKWmpFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1kyeHBaVzUwTVJjd0ZRWURWUVFERXc1eVkyRXRiM0puCk1pMWhaRzFwYmpBZUZ3MHhPREF4TXpBeU1qSTBNREJhRncweE9UQXhNekF5TWpJNU1EQmFNR1l4Q3pBSkJnTlYKQkFZVEFsVlRNUmN3RlFZRFZRUUlFdzVPYjNKMGFDQkRZWEp2YkdsdVlURVVNQklHQTFVRUNoTUxTSGx3WlhKcwpaV1JuWlhJeER6QU5CZ05WQkFzVEJtTnNhV1Z1ZERFWE1CVUdBMVVFQXhNT2FXTmhMVzl5WnpJdFlXUnRhVzR3CldUQVRCZ2NxaGtqT1BRSUJCZ2dxaGtqT1BRTUJCd05DQUFSUDdRTVV6R1RwTHB3U2F6SHR1REtoN25ZMmhmdS8KUHAxK0NWeFpDaElsWjEwbFZQQXNxSzA5ZE01Nm1oYlJWdDJIMkZZWEt6NUlmL1JjYnZDcTBrQ25vM2t3ZHpBTwpCZ05WSFE4QkFmOEVCQU1DQjRBd0RBWURWUjBUQVFIL0JBSXdBREFkQmdOVkhRNEVGZ1FVMGJmZzJZaU9hWHZtCldVTkt1QklJWkN2R1NmMHdId1lEVlIwakJCZ3dGb0FVdjZSSElSMlE3dlM3c1ZNbmp6cTFDN0ZhTkdJd0Z3WUQKVlIwUkJCQXdEb0lNWVRRME1tTTVNalZqTVROa01Bb0dDQ3FHU000OUJBTUNBMGdBTUVVQ0lRQ1NtUDlvdzZMbgpuQWJadUhNKy9ycDNmSFErZjJGNWxheUhqUFgzdHBVUHF3SWdaZHhUdFFPaWo0bDJyMzA5Rk0vcmlvYXhHbEJpCmdlUXRVaHlZbFU4a0t1UT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo= ServerInfo:map[CAName:ica-org2 CAChain:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMVENDQWRTZ0F3SUJBZ0lVUWJsa0JZSFhaU2ppQ0hxSzVrZWx3ckg5SE1Rd0NnWUlLb1pJemowRUF3SXcKWURFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1JtRmljbWxqTVJFd0R3WURWUVFERXdoeVkyRXRiM0puCk1qQWVGdzB4T0RBeE16QXlNakl4TURCYUZ3MHlNekF4TWpreU1qSTJNREJhTUdZeEN6QUpCZ05WQkFZVEFsVlQKTVJjd0ZRWURWUVFJRXc1T2IzSjBhQ0JEWVhKdmJHbHVZVEVVTUJJR0ExVUVDaE1MU0hsd1pYSnNaV1JuWlhJeApEekFOQmdOVkJBc1RCbU5zYVdWdWRERVhNQlVHQTFVRUF4TU9jbU5oTFc5eVp6SXRZV1J0YVc0d1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBUjVsQSs1aGNVdUdzN0ZlMDFabUdsSldnVG8rdVUwYWpxUGV5NVUKRzdPMXFSeG0rSSs1bGc4WTN3RmZacWpBbC9QYmlvSXpla2tTWm9GTUxrTnppeWZvbzJZd1pEQU9CZ05WSFE4QgpBZjhFQkFNQ0FRWXdFZ1lEVlIwVEFRSC9CQWd3QmdFQi93SUJBREFkQmdOVkhRNEVGZ1FVdjZSSElSMlE3dlM3CnNWTW5qenExQzdGYU5HSXdId1lEVlIwakJCZ3dGb0FVZGNnMlRXMzNNUHRsZGNzdkFoR3J6RE1NTVFJd0NnWUkKS29aSXpqMEVBd0lEUndBd1JBSWdBbjZLL1hENDIzSXQ5dXhzZHRuTThLOWdaVnhLVE9kR2RaTmhaV3hSYVdNQwpJRW84RG9CeklTOE9TdEozWHRtMUZDUDFrVXVMZ2xic0NDOW9VQ1NoTjU1QgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlDQnpDQ0FhMmdBd0lCQWdJVWNVQ3poSXgzNitJak52cEVlbmNVLy9mZzhVSXdDZ1lJS29aSXpqMEVBd0l3CllERUxNQWtHQTFVRUJoTUNWVk14RnpBVkJnTlZCQWdURGs1dmNuUm9JRU5oY205c2FXNWhNUlF3RWdZRFZRUUsKRXd0SWVYQmxjbXhsWkdkbGNqRVBNQTBHQTFVRUN4TUdSbUZpY21sak1SRXdEd1lEVlFRREV3aHlZMkV0YjNKbgpNakFlRncweE9EQXhNekF5TWpJeE1EQmFGdzB6TXpBeE1qWXlNakl4TURCYU1HQXhDekFKQmdOVkJBWVRBbFZUCk1SY3dGUVlEVlFRSUV3NU9iM0owYUNCRFlYSnZiR2x1WVRFVU1CSUdBMVVFQ2hNTFNIbHdaWEpzWldSblpYSXgKRHpBTkJnTlZCQXNUQmtaaFluSnBZekVSTUE4R0ExVUVBeE1JY21OaExXOXlaekl3V1RBVEJnY3Foa2pPUFFJQgpCZ2dxaGtqT1BRTUJCd05DQUFSRXZwd2d2OFluREJNdUJOL3hHSHNOcmVCaVlZS0pCUStlZWhTUDJaSnBqeDNGCmNuZkF4cUpaNlNBaWxLWXVNcVM2dFQwUWQ2M0pudU8reitVczZsZHlvMFV3UXpBT0JnTlZIUThCQWY4RUJBTUMKQVFZd0VnWURWUjBUQVFIL0JBZ3dCZ0VCL3dJQkFUQWRCZ05WSFE0RUZnUVVkY2cyVFczM01QdGxkY3N2QWhHcgp6RE1NTVFJd0NnWUlLb1pJemowRUF3SURTQUF3UlFJaEFQbnBMcks3NzdMRDVqelMvS0RPMENsV1pIQlUxNU1lCmJ4SFJ0QWJJM1lNK0FpQWxScU1qcnphLzhOczJwNHlqajQwdUM3eTlDdjZwT2JoT3JBTnFhTGtUNXc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg== Version:]]
+2018/01/30 22:28:51 [DEBUG] newEnrollmentResponse ica-org2-admin
+2018/01/30 22:28:51 [INFO] Stored client certificate at /root/cas/ica-org2/msp/signcerts/cert.pem
+2018/01/30 22:28:51 [INFO] Stored root CA certificate at /root/cas/ica-org2/msp/cacerts/ica-org2-7054.pem
+2018/01/30 22:28:51 [INFO] Stored intermediate CA certificates at /root/cas/ica-org2/msp/intermediatecerts/ica-org2-7054.pem
+##### 2018-01-30 22:28:51 Registering peer1-org2 with ica-org2
+2018/01/30 22:28:51 [DEBUG] Home directory: /root/cas/ica-org2
+2018/01/30 22:28:51 [INFO] Configuration file location: /root/cas/ica-org2/fabric-ca-client-config.yaml
+2018/01/30 22:28:51 [DEBUG] Checking for enrollment
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer1-org2 Type:client Secret:peer1-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201693e0}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420163f80 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201fa930 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org2:7054 MSPDir:/root/cas/ica-org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer1-org2 Type:client Secret:peer1-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201693e0}
+2018/01/30 22:28:51 [DEBUG] Entered runRegister
+2018/01/30 22:28:51 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:/root/cas/ica-org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer1-org2 Type:client Secret:peer1-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201693e0}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420163f80 Pkcs11Opts:<nil>}
+2018/01/30 22:28:51 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201fa930 DummyKeystore:<nil>}
+2018/01/30 22:28:51 [INFO] TLS Enabled
+2018/01/30 22:28:51 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:51 [DEBUG] Client Cert File: 
+2018/01/30 22:28:51 [DEBUG] Client Key File: 
+2018/01/30 22:28:51 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:51 [DEBUG] Loading identity: keyFile=/root/cas/ica-org2/msp/keystore/key.pem, certFile=/root/cas/ica-org2/msp/signcerts/cert.pem
+2018/01/30 22:28:51 [DEBUG] Register { Name:peer1-org2 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:  }
+2018/01/30 22:28:51 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:51 [DEBUG] Sending request
+POST https://ica-org2:7054/register
+{"id":"peer1-org2","type":"client","secret":"peer1-org2pw","max_enrollments":-1,"affiliation":"org1"}
+2018/01/30 22:28:52 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:52 [DEBUG] Response body result: map[secret:peer1-org2pw]
+2018/01/30 22:28:52 [DEBUG] The register request completed successfully
+Password: peer1-org2pw
+##### 2018-01-30 22:28:52 Registering peer2-org2 with ica-org2
+2018/01/30 22:28:52 [DEBUG] Home directory: /root/cas/ica-org2
+2018/01/30 22:28:52 [INFO] Configuration file location: /root/cas/ica-org2/fabric-ca-client-config.yaml
+2018/01/30 22:28:52 [DEBUG] Checking for enrollment
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer2-org2 Type:client Secret:peer2-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420196e20}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4201aeb70 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201c2400 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org2:7054 MSPDir:/root/cas/ica-org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer2-org2 Type:client Secret:peer2-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420196e20}
+2018/01/30 22:28:52 [DEBUG] Entered runRegister
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:/root/cas/ica-org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:peer2-org2 Type:client Secret:peer2-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc420196e20}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4201aeb70 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201c2400 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Loading identity: keyFile=/root/cas/ica-org2/msp/keystore/key.pem, certFile=/root/cas/ica-org2/msp/signcerts/cert.pem
+2018/01/30 22:28:52 [DEBUG] Register { Name:peer2-org2 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:  }
+2018/01/30 22:28:52 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:52 [DEBUG] Sending request
+POST https://ica-org2:7054/register
+{"id":"peer2-org2","type":"client","secret":"peer2-org2pw","max_enrollments":-1,"affiliation":"org1"}
+2018/01/30 22:28:52 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:52 [DEBUG] Response body result: map[secret:peer2-org2pw]
+2018/01/30 22:28:52 [DEBUG] The register request completed successfully
+Password: peer2-org2pw
+##### 2018-01-30 22:28:52 Registering admin identity with ica-org2
+2018/01/30 22:28:52 [DEBUG] Home directory: /root/cas/ica-org2
+2018/01/30 22:28:52 [INFO] Configuration file location: /root/cas/ica-org2/fabric-ca-client-config.yaml
+2018/01/30 22:28:52 [DEBUG] Checking for enrollment
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org2 Type:client Secret:admin-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:hf.Registrar.Roles Value:client ECert:false} {Name:hf.Registrar.Attributes Value:* ECert:false} {Name:hf.Revoker Value:true ECert:false} {Name:hf.GenCRL Value:true ECert:false} {Name:admin Value:true ECert:true} {Name:abac.init Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201633c0}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420169cb0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4202008c0 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org2:7054 MSPDir:/root/cas/ica-org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org2 Type:client Secret:admin-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:hf.Registrar.Roles Value:client ECert:false} {Name:hf.Registrar.Attributes Value:* ECert:false} {Name:hf.Revoker Value:true ECert:false} {Name:hf.GenCRL Value:true ECert:false} {Name:admin Value:true ECert:true} {Name:abac.init Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201633c0}
+2018/01/30 22:28:52 [DEBUG] Entered runRegister
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:/root/cas/ica-org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:admin-org2 Type:client Secret:admin-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[{Name:hf.Registrar.Roles Value:client ECert:false} {Name:hf.Registrar.Attributes Value:* ECert:false} {Name:hf.Revoker Value:true ECert:false} {Name:hf.GenCRL Value:true ECert:false} {Name:admin Value:true ECert:true} {Name:abac.init Value:true ECert:true}] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc4201633c0}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420169cb0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4202008c0 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Loading identity: keyFile=/root/cas/ica-org2/msp/keystore/key.pem, certFile=/root/cas/ica-org2/msp/signcerts/cert.pem
+2018/01/30 22:28:52 [DEBUG] Register { Name:admin-org2 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[{hf.Registrar.Roles client false} {hf.Registrar.Attributes * false} {hf.Revoker true false} {hf.GenCRL true false} {admin true true} {abac.init true true}] CAName:  }
+2018/01/30 22:28:52 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:52 [DEBUG] Sending request
+POST https://ica-org2:7054/register
+{"id":"admin-org2","type":"client","secret":"admin-org2pw","max_enrollments":-1,"affiliation":"org1","attrs":[{"name":"hf.Registrar.Roles","value":"client"},{"name":"hf.Registrar.Attributes","value":"*"},{"name":"hf.Revoker","value":"true"},{"name":"hf.GenCRL","value":"true"},{"name":"admin","value":"true","ecert":true},{"name":"abac.init","value":"true","ecert":true}]}
+2018/01/30 22:28:52 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:52 [DEBUG] Response body result: map[secret:admin-org2pw]
+2018/01/30 22:28:52 [DEBUG] The register request completed successfully
+Password: admin-org2pw
+##### 2018-01-30 22:28:52 Registering user identity with ica-org2
+2018/01/30 22:28:52 [DEBUG] Home directory: /root/cas/ica-org2
+2018/01/30 22:28:52 [INFO] Configuration file location: /root/cas/ica-org2/fabric-ca-client-config.yaml
+2018/01/30 22:28:52 [DEBUG] Checking for enrollment
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:user-org2 Type:client Secret:user-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42018ce00}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4201a2ba0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201b83d0 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org2:7054 MSPDir:/root/cas/ica-org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:user-org2 Type:client Secret:user-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42018ce00}
+2018/01/30 22:28:52 [DEBUG] Entered runRegister
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:/root/cas/ica-org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name:user-org2 Type:client Secret:user-org2pw MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42018ce00}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4201a2ba0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201b83d0 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Loading identity: keyFile=/root/cas/ica-org2/msp/keystore/key.pem, certFile=/root/cas/ica-org2/msp/signcerts/cert.pem
+2018/01/30 22:28:52 [DEBUG] Register { Name:user-org2 Type:client Secret:**** MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:  }
+2018/01/30 22:28:52 [DEBUG] Adding token-based authorization header
+2018/01/30 22:28:52 [DEBUG] Sending request
+POST https://ica-org2:7054/register
+{"id":"user-org2","type":"client","secret":"user-org2pw","max_enrollments":-1,"affiliation":"org1"}
+2018/01/30 22:28:52 [DEBUG] Received response
+statusCode=201 (201 Created)
+2018/01/30 22:28:52 [DEBUG] Response body result: map[secret:user-org2pw]
+2018/01/30 22:28:52 [DEBUG] The register request completed successfully
+Password: user-org2pw
+##### 2018-01-30 22:28:52 Getting CA certificates ...
+##### 2018-01-30 22:28:52 Getting CA certs for organization org0 and storing in /data/orgs/org0/msp
+2018/01/30 22:28:52 [DEBUG] Home directory: /root/cas/ica-org2
+2018/01/30 22:28:52 [INFO] Configuration file location: /root/cas/ica-org2/fabric-ca-client-config.yaml
+2018/01/30 22:28:52 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org0:7054 MSPDir:/data/orgs/org0/msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42000d5e0}
+2018/01/30 22:28:52 [DEBUG] Entered runGetCACert
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org0:7054 MSPDir:/data/orgs/org0/msp TLS:{Enabled:true CertFiles:[/data/org0-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42000d5e0}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc42018bfb0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc420205350 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org0-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Sending request
+POST https://ica-org0:7054/cainfo
+{}
+2018/01/30 22:28:52 [DEBUG] Received response
+statusCode=200 (200 OK)
+2018/01/30 22:28:52 [DEBUG] Response body result: map[CAChain:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMVENDQWRTZ0F3SUJBZ0lVVHdyZjFwNDRqNHlGYXU1bUlqZ2EyVlptdExJd0NnWUlLb1pJemowRUF3SXcKWURFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1JtRmljbWxqTVJFd0R3WURWUVFERXdoeVkyRXRiM0puCk1EQWVGdzB4T0RBeE16QXlNakl4TURCYUZ3MHlNekF4TWpreU1qSTJNREJhTUdZeEN6QUpCZ05WQkFZVEFsVlQKTVJjd0ZRWURWUVFJRXc1T2IzSjBhQ0JEWVhKdmJHbHVZVEVVTUJJR0ExVUVDaE1MU0hsd1pYSnNaV1JuWlhJeApEekFOQmdOVkJBc1RCbU5zYVdWdWRERVhNQlVHQTFVRUF4TU9jbU5oTFc5eVp6QXRZV1J0YVc0d1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBU2tFRm5KcUEyNDNVQUpOMXZpdmJ3TVJQTDFtUDBra0ZHQUhJNzIKY0VMWXJTR0ZPaGhXYXh4WGpyWWFSUE1zWUdkRGszRWlCNGFiV29zK1hCZG10Q1Z4bzJZd1pEQU9CZ05WSFE4QgpBZjhFQkFNQ0FRWXdFZ1lEVlIwVEFRSC9CQWd3QmdFQi93SUJBREFkQmdOVkhRNEVGZ1FVdC9obHhKU0V5UDlUCk55NHE0UTh4c1o4YU1qd3dId1lEVlIwakJCZ3dGb0FVanc1ZFdjQnoweVFGRU1aMnh5aWFpaWpCeVIwd0NnWUkKS29aSXpqMEVBd0lEUndBd1JBSWdNRW9qQzI3YXphY3NHYWkwNnZRbTgvSlFNMjBxSlhmNUJMZHZRcGIxNW0wQwpJSEhHRXUvWFFhQ2xRekhwdzNxSzNSakRoSnRjVk0xVW5CT3prSUp4U2o4ZgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlDQmpDQ0FhMmdBd0lCQWdJVWJjYnBwOFF4VTNtWXQ5TmlUWnB1M0RNbEpQRXdDZ1lJS29aSXpqMEVBd0l3CllERUxNQWtHQTFVRUJoTUNWVk14RnpBVkJnTlZCQWdURGs1dmNuUm9JRU5oY205c2FXNWhNUlF3RWdZRFZRUUsKRXd0SWVYQmxjbXhsWkdkbGNqRVBNQTBHQTFVRUN4TUdSbUZpY21sak1SRXdEd1lEVlFRREV3aHlZMkV0YjNKbgpNREFlRncweE9EQXhNekF5TWpJeE1EQmFGdzB6TXpBeE1qWXlNakl4TURCYU1HQXhDekFKQmdOVkJBWVRBbFZUCk1SY3dGUVlEVlFRSUV3NU9iM0owYUNCRFlYSnZiR2x1WVRFVU1CSUdBMVVFQ2hNTFNIbHdaWEpzWldSblpYSXgKRHpBTkJnTlZCQXNUQmtaaFluSnBZekVSTUE4R0ExVUVBeE1JY21OaExXOXlaekF3V1RBVEJnY3Foa2pPUFFJQgpCZ2dxaGtqT1BRTUJCd05DQUFTTVVWSzl3VngvSENqRzZyOGFWT0F3S09PeWtidjBYMGp2RzJVSWNibEd0OEhKCnNXbllNVVBGUFovaFZvVCs5ODZ6bDV2OUpkYVg4MytoMjQxSWJINVFvMFV3UXpBT0JnTlZIUThCQWY4RUJBTUMKQVFZd0VnWURWUjBUQVFIL0JBZ3dCZ0VCL3dJQkFUQWRCZ05WSFE0RUZnUVVqdzVkV2NCejB5UUZFTVoyeHlpYQppaWpCeVIwd0NnWUlLb1pJemowRUF3SURSd0F3UkFJZ1JoT0Vaa29iUS9KSGlDSnNDOXNmK3JjS2t2N0J2WWN2Clo2T0Y1Vit2MTNzQ0lBL0NORjBBMEVtZkc0emh4bTNqSU5uMUJBeEk0ZFBGU204Y1ZiSVVBY2dwCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K Version:1.1.0-alpha CAName:ica-org0]
+2018/01/30 22:28:52 [INFO] Stored root CA certificate at /data/orgs/org0/msp/cacerts/ica-org0-7054.pem
+2018/01/30 22:28:52 [INFO] Stored intermediate CA certificates at /data/orgs/org0/msp/intermediatecerts/ica-org0-7054.pem
+##### 2018-01-30 22:28:52 Getting CA certs for organization org1 and storing in /data/orgs/org1/msp
+2018/01/30 22:28:52 [DEBUG] Home directory: /root/cas/ica-org2
+2018/01/30 22:28:52 [INFO] Configuration file location: /root/cas/ica-org2/fabric-ca-client-config.yaml
+2018/01/30 22:28:52 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org1:7054 MSPDir:/data/orgs/org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016f8a0}
+2018/01/30 22:28:52 [DEBUG] Entered runGetCACert
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org1:7054 MSPDir:/data/orgs/org1/msp TLS:{Enabled:true CertFiles:[/data/org1-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42016f8a0}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc420206000 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201ff930 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org1-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Sending request
+POST https://ica-org1:7054/cainfo
+{}
+2018/01/30 22:28:52 [DEBUG] Received response
+statusCode=200 (200 OK)
+2018/01/30 22:28:52 [DEBUG] Response body result: map[CAName:ica-org1 CAChain:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMVENDQWRTZ0F3SUJBZ0lVVldGcVI3cGNCYnd2Nm9aTXE2S2lHOTdMMVlvd0NnWUlLb1pJemowRUF3SXcKWURFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1JtRmljbWxqTVJFd0R3WURWUVFERXdoeVkyRXRiM0puCk1UQWVGdzB4T0RBeE16QXlNakl4TURCYUZ3MHlNekF4TWpreU1qSTJNREJhTUdZeEN6QUpCZ05WQkFZVEFsVlQKTVJjd0ZRWURWUVFJRXc1T2IzSjBhQ0JEWVhKdmJHbHVZVEVVTUJJR0ExVUVDaE1MU0hsd1pYSnNaV1JuWlhJeApEekFOQmdOVkJBc1RCbU5zYVdWdWRERVhNQlVHQTFVRUF4TU9jbU5oTFc5eVp6RXRZV1J0YVc0d1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBUUZ2Z21YdFcrUEVnYzZ6WisxcnlobUVTZktodGRsSjJ1RHN4dUcKYVU4MDBvMVFNdkQ3Y2ZUNkE4bFVEQ3hQeGYxc2hBbS81UkEyczA5ZkxtMlZFR2d1bzJZd1pEQU9CZ05WSFE4QgpBZjhFQkFNQ0FRWXdFZ1lEVlIwVEFRSC9CQWd3QmdFQi93SUJBREFkQmdOVkhRNEVGZ1FVUTN5YW8vUHZ1aUdqCmhNR3R3eDRZaDhiTDBiUXdId1lEVlIwakJCZ3dGb0FVMEN3WlJyYytndmlkYWdERUJqOWF2bThESU9jd0NnWUkKS29aSXpqMEVBd0lEUndBd1JBSWdSOTNpclZzaG81MDJsdGwraVZ6VUpTWHJoNWlZalljRXBTa2dxWXZJSnhFQwpJQS9WSmdsYmY1UFR0SytlUCtRY3hvWU9LZmxwVDJMdFdmQnpOUXh5cnIzRgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlDQmpDQ0FhMmdBd0lCQWdJVVkrTWRlb1I3bXU4UlF3U3FSc2xacGxnNXpmTXdDZ1lJS29aSXpqMEVBd0l3CllERUxNQWtHQTFVRUJoTUNWVk14RnpBVkJnTlZCQWdURGs1dmNuUm9JRU5oY205c2FXNWhNUlF3RWdZRFZRUUsKRXd0SWVYQmxjbXhsWkdkbGNqRVBNQTBHQTFVRUN4TUdSbUZpY21sak1SRXdEd1lEVlFRREV3aHlZMkV0YjNKbgpNVEFlRncweE9EQXhNekF5TWpJeE1EQmFGdzB6TXpBeE1qWXlNakl4TURCYU1HQXhDekFKQmdOVkJBWVRBbFZUCk1SY3dGUVlEVlFRSUV3NU9iM0owYUNCRFlYSnZiR2x1WVRFVU1CSUdBMVVFQ2hNTFNIbHdaWEpzWldSblpYSXgKRHpBTkJnTlZCQXNUQmtaaFluSnBZekVSTUE4R0ExVUVBeE1JY21OaExXOXlaekV3V1RBVEJnY3Foa2pPUFFJQgpCZ2dxaGtqT1BRTUJCd05DQUFRYkxLZ1lVdi83TjZkVk1tN05jeEh5cWZUUjdmYWF6b3B1SDlGZDdrMUtaY3BSCkpLZmJvZ2lXUnNxQkxaZmNBTXU1dFMwcjRqMHIvRTJjWk5HbVZ3d2hvMFV3UXpBT0JnTlZIUThCQWY4RUJBTUMKQVFZd0VnWURWUjBUQVFIL0JBZ3dCZ0VCL3dJQkFUQWRCZ05WSFE0RUZnUVUwQ3daUnJjK2d2aWRhZ0RFQmo5YQp2bThESU9jd0NnWUlLb1pJemowRUF3SURSd0F3UkFJZ2RvdkNtVzJNVmFzY0YwZzcxTk9aK2lpblhQTlJTZGRVCmZaRW1sUGlKOWhJQ0lHWU5jWjJka1pIYzF0R21oN1dZZXg1Um03djI4NUF4RWRKYjkva1hCWEMzCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K Version:1.1.0-alpha]
+2018/01/30 22:28:52 [INFO] Stored root CA certificate at /data/orgs/org1/msp/cacerts/ica-org1-7054.pem
+2018/01/30 22:28:52 [INFO] Stored intermediate CA certificates at /data/orgs/org1/msp/intermediatecerts/ica-org1-7054.pem
+##### 2018-01-30 22:28:52 Getting CA certs for organization org2 and storing in /data/orgs/org2/msp
+2018/01/30 22:28:52 [DEBUG] Home directory: /root/cas/ica-org2
+2018/01/30 22:28:52 [INFO] Configuration file location: /root/cas/ica-org2/fabric-ca-client-config.yaml
+2018/01/30 22:28:52 [DEBUG] Client configuration settings: &{Debug:true URL:https://ica-org2:7054 MSPDir:/data/orgs/org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42018cb20}
+2018/01/30 22:28:52 [DEBUG] Entered runGetCACert
+2018/01/30 22:28:52 [DEBUG] Initializing client with config: &{Debug:true URL:https://ica-org2:7054 MSPDir:/data/orgs/org2/msp TLS:{Enabled:true CertFiles:[/data/org2-ca-chain.pem] Client:{KeyFile: CertFile:}} Enrollment:{ Name: Secret:**** Profile: Label: CSR:<nil> CAName: AttrReqs:[]  } CSR:{CN:ica-org2-admin Names:[{C:US ST:North Carolina L: O:Hyperledger OU:Fabric SerialNumber:}] Hosts:[a442c925c13d] KeyRequest:<nil> CA:<nil> SerialNumber:} ID:{Name: Type:client Secret: MaxEnrollments:-1 Affiliation:org1 Attributes:[] CAName:} Revoke:{Name: Serial: AKI: Reason: CAName: GenCRL:false} CAInfo:{CAName:} CAName: CSP:0xc42018cb20}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP: &{ProviderName:SW SwOpts:0xc4201a2bd0 Pkcs11Opts:<nil>}
+2018/01/30 22:28:52 [DEBUG] Initializing BCCSP with software options &{SecLevel:256 HashFamily:SHA2 Ephemeral:false FileKeystore:0xc4201b6560 DummyKeystore:<nil>}
+2018/01/30 22:28:52 [INFO] TLS Enabled
+2018/01/30 22:28:52 [DEBUG] CA Files: [/data/org2-ca-chain.pem]
+2018/01/30 22:28:52 [DEBUG] Client Cert File: 
+2018/01/30 22:28:52 [DEBUG] Client Key File: 
+2018/01/30 22:28:52 [DEBUG] Client TLS certificate and/or key file not provided
+2018/01/30 22:28:52 [DEBUG] Sending request
+POST https://ica-org2:7054/cainfo
+{}
+2018/01/30 22:28:52 [DEBUG] Received response
+statusCode=200 (200 OK)
+2018/01/30 22:28:52 [DEBUG] Response body result: map[Version:1.1.0-alpha CAName:ica-org2 CAChain:LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNMVENDQWRTZ0F3SUJBZ0lVUWJsa0JZSFhaU2ppQ0hxSzVrZWx3ckg5SE1Rd0NnWUlLb1pJemowRUF3SXcKWURFTE1Ba0dBMVVFQmhNQ1ZWTXhGekFWQmdOVkJBZ1REazV2Y25Sb0lFTmhjbTlzYVc1aE1SUXdFZ1lEVlFRSwpFd3RJZVhCbGNteGxaR2RsY2pFUE1BMEdBMVVFQ3hNR1JtRmljbWxqTVJFd0R3WURWUVFERXdoeVkyRXRiM0puCk1qQWVGdzB4T0RBeE16QXlNakl4TURCYUZ3MHlNekF4TWpreU1qSTJNREJhTUdZeEN6QUpCZ05WQkFZVEFsVlQKTVJjd0ZRWURWUVFJRXc1T2IzSjBhQ0JEWVhKdmJHbHVZVEVVTUJJR0ExVUVDaE1MU0hsd1pYSnNaV1JuWlhJeApEekFOQmdOVkJBc1RCbU5zYVdWdWRERVhNQlVHQTFVRUF4TU9jbU5oTFc5eVp6SXRZV1J0YVc0d1dUQVRCZ2NxCmhrak9QUUlCQmdncWhrak9QUU1CQndOQ0FBUjVsQSs1aGNVdUdzN0ZlMDFabUdsSldnVG8rdVUwYWpxUGV5NVUKRzdPMXFSeG0rSSs1bGc4WTN3RmZacWpBbC9QYmlvSXpla2tTWm9GTUxrTnppeWZvbzJZd1pEQU9CZ05WSFE4QgpBZjhFQkFNQ0FRWXdFZ1lEVlIwVEFRSC9CQWd3QmdFQi93SUJBREFkQmdOVkhRNEVGZ1FVdjZSSElSMlE3dlM3CnNWTW5qenExQzdGYU5HSXdId1lEVlIwakJCZ3dGb0FVZGNnMlRXMzNNUHRsZGNzdkFoR3J6RE1NTVFJd0NnWUkKS29aSXpqMEVBd0lEUndBd1JBSWdBbjZLL1hENDIzSXQ5dXhzZHRuTThLOWdaVnhLVE9kR2RaTmhaV3hSYVdNQwpJRW84RG9CeklTOE9TdEozWHRtMUZDUDFrVXVMZ2xic0NDOW9VQ1NoTjU1QgotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCi0tLS0tQkVHSU4gQ0VSVElGSUNBVEUtLS0tLQpNSUlDQnpDQ0FhMmdBd0lCQWdJVWNVQ3poSXgzNitJak52cEVlbmNVLy9mZzhVSXdDZ1lJS29aSXpqMEVBd0l3CllERUxNQWtHQTFVRUJoTUNWVk14RnpBVkJnTlZCQWdURGs1dmNuUm9JRU5oY205c2FXNWhNUlF3RWdZRFZRUUsKRXd0SWVYQmxjbXhsWkdkbGNqRVBNQTBHQTFVRUN4TUdSbUZpY21sak1SRXdEd1lEVlFRREV3aHlZMkV0YjNKbgpNakFlRncweE9EQXhNekF5TWpJeE1EQmFGdzB6TXpBeE1qWXlNakl4TURCYU1HQXhDekFKQmdOVkJBWVRBbFZUCk1SY3dGUVlEVlFRSUV3NU9iM0owYUNCRFlYSnZiR2x1WVRFVU1CSUdBMVVFQ2hNTFNIbHdaWEpzWldSblpYSXgKRHpBTkJnTlZCQXNUQmtaaFluSnBZekVSTUE4R0ExVUVBeE1JY21OaExXOXlaekl3V1RBVEJnY3Foa2pPUFFJQgpCZ2dxaGtqT1BRTUJCd05DQUFSRXZwd2d2OFluREJNdUJOL3hHSHNOcmVCaVlZS0pCUStlZWhTUDJaSnBqeDNGCmNuZkF4cUpaNlNBaWxLWXVNcVM2dFQwUWQ2M0pudU8reitVczZsZHlvMFV3UXpBT0JnTlZIUThCQWY4RUJBTUMKQVFZd0VnWURWUjBUQVFIL0JBZ3dCZ0VCL3dJQkFUQWRCZ05WSFE0RUZnUVVkY2cyVFczM01QdGxkY3N2QWhHcgp6RE1NTVFJd0NnWUlLb1pJemowRUF3SURTQUF3UlFJaEFQbnBMcks3NzdMRDVqelMvS0RPMENsV1pIQlUxNU1lCmJ4SFJ0QWJJM1lNK0FpQWxScU1qcnphLzhOczJwNHlqajQwdUM3eTlDdjZwT2JoT3JBTnFhTGtUNXc9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==]
+2018/01/30 22:28:52 [INFO] Stored root CA certificate at /data/orgs/org2/msp/cacerts/ica-org2-7054.pem
+2018/01/30 22:28:52 [INFO] Stored intermediate CA certificates at /data/orgs/org2/msp/intermediatecerts/ica-org2-7054.pem
+/usr/local/bin/configtxgen
+##### 2018-01-30 22:28:52 Generating orderer genesis block at /data/genesis.block
+2018-01-30 22:28:52.478 UTC [common/tools/configtxgen] main -> INFO 001[0m Loading configuration
+2018-01-30 22:28:52.485 UTC [common/tools/configtxgen] doOutputBlock -> INFO 002[0m Generating genesis block
+2018-01-30 22:28:52.485 UTC [common/tools/configtxgen] doOutputBlock -> INFO 003[0m Writing genesis block
+##### 2018-01-30 22:28:52 Generating channel configuration transaction at /data/channel.tx
+2018-01-30 22:28:52.504 UTC [common/tools/configtxgen] main -> INFO 001[0m Loading configuration
+2018-01-30 22:28:52.509 UTC [common/tools/configtxgen] doOutputChannelCreateTx -> INFO 002[0m Generating new channel configtx
+[35m2018-01-30 22:28:52.527 UTC [common/tools/configtxgen] main -> CRIT 003[0m Error on outputChannelCreateTx: config update generation failure: could not parse application to application group: setting up the MSP manager failed: the supplied identity is not valid: x509: certificate signed by unknown authority (possibly because of "x509: ECDSA verification failure" while trying to verify candidate authority certificate "rca-org1-admin")
