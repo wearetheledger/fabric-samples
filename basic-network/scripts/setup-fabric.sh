@@ -257,13 +257,13 @@ function generateChannelArtifacts() {
   log "Generating orderer genesis block at $GENESIS_BLOCK_FILE"
   # Note: For some unknown reason (at least for now) the block file can't be
   # named orderer.genesis.block or the orderer will fail to launch!
-  configtxgen -profile OrgsOrdererGenesis -outputBlock $GENESIS_BLOCK_FILE
+  configtxgen -profile TwoOrgOrdererGenesis -outputBlock $GENESIS_BLOCK_FILE
   if [ "$?" -ne 0 ]; then
     fatal "Failed to generate orderer genesis block"
   fi
 
   log "Generating channel configuration transaction at $CHANNEL_TX_FILE"
-  configtxgen -profile OrgsChannel -outputCreateChannelTx $CHANNEL_TX_FILE -channelID $CHANNEL_NAME
+  configtxgen -profile TwoOrgChannel -outputCreateChannelTx $CHANNEL_TX_FILE -channelID $CHANNEL_NAME
   if [ "$?" -ne 0 ]; then
     fatal "Failed to generate channel configuration transaction"
   fi
@@ -271,7 +271,7 @@ function generateChannelArtifacts() {
   for ORG in $PEER_ORGS; do
      initOrgVars $ORG
      log "Generating anchor peer update transaction for $ORG at $ANCHOR_TX_FILE"
-     configtxgen -profile OrgsChannel -outputAnchorPeersUpdate $ANCHOR_TX_FILE \
+     configtxgen -profile TwoOrgChannel -outputAnchorPeersUpdate $ANCHOR_TX_FILE \
                  -channelID $CHANNEL_NAME -asOrg $ORG
      if [ "$?" -ne 0 ]; then
         fatal "Failed to generate anchor peer update for $ORG"
