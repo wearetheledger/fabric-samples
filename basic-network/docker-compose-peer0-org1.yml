@@ -45,6 +45,7 @@ services:
       - ./scripts:/scripts
       - ./data:/data
       - /var/run:/host/var/run
+      - ./crypto-config:/crypto-config
     networks:
       - fabric-ca
 

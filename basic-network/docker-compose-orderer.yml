@@ -35,6 +35,7 @@ services:
     volumes:
       - ./scripts:/scripts
       - ./data:/data
+      - ./crypto-config:/crypto-config
     networks:
       - fabric-ca
     
