@@ -31,6 +31,7 @@ services:
       - ORDERER_DEBUG_BROADCASTTRACEDIR=data/logs
       - ORG=org0
       - ORG_ADMIN_CERT=/data/orgs/org0/msp/admincerts/cert.pem
+    command: /bin/bash -c '/scripts/start-orderer.sh 2>&1 | tee /data/logs/orderer1-org0.log'
     volumes:
       - ./scripts:/scripts
       - ./data:/data
