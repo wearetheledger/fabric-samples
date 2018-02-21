@@ -13,19 +13,19 @@ services:
     container_name: orderer1-org0
     image: hyperledger/fabric-ca-orderer
     environment:
-      - FABRIC_CA_CLIENT_HOME=/etc/hyperledger/orderer
+      - FABRIC_CA_CLIENT_HOME=/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-34-251-33-15.eu-west-1.compute.amazonaws.com/
       - FABRIC_CA_CLIENT_TLS_CERTFILES=/data/org0-ca-chain.pem
       - ENROLLMENT_URL=https://orderer1-org0:orderer1-org0pw@ec2-52-49-39-97.eu-west-1.compute.amazonaws.com:10054
-      - ORDERER_HOME=/etc/hyperledger/orderer
+      - ORDERER_HOME=/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-34-251-33-15.eu-west-1.compute.amazonaws.com/
       - ORDERER_HOST=orderer1-org0
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/data/genesis.block
       - ORDERER_GENERAL_LOCALMSPID=org0MSP
-      - ORDERER_GENERAL_LOCALMSPDIR=/etc/hyperledger/orderer/msp
+      - ORDERER_GENERAL_LOCALMSPDIR=/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-34-251-33-15.eu-west-1.compute.amazonaws.com/msp
       - ORDERER_GENERAL_TLS_ENABLED=true
-      - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/hyperledger/orderer/tls/server.key
-      - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/hyperledger/orderer/tls/server.crt
+      - ORDERER_GENERAL_TLS_PRIVATEKEY=/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-34-251-33-15.eu-west-1.compute.amazonaws.com/tls/server.key
+      - ORDERER_GENERAL_TLS_CERTIFICATE=/crypto-config/ordererOrganizations/amazonaws.com/orderers/ec2-34-251-33-15.eu-west-1.compute.amazonaws.com/tls/server.crt
       - ORDERER_GENERAL_TLS_ROOTCAS=[/data/org0-ca-chain.pem]
       - ORDERER_GENERAL_LOGLEVEL=debug
       - ORDERER_DEBUG_BROADCASTTRACEDIR=data/logs
